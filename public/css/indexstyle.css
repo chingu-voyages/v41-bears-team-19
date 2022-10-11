@@ -1,0 +1,71 @@
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0px;
+}
+
+body{
+    /* background-color: rgb(227, 229, 230); */
+    font-family: 'Lexend Deca', sans-serif;
+    position: relative;
+    background-image: url("../images/header2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    padding: 7.5em 0 0 0;
+    cursor: default;
+    display: flex;
+}
+
+#page-wrapper{
+    background-color: rgba(123, 165, 255, 0.9);
+    margin: 19vh 35vw;
+    border-radius: 10px;
+    padding: 2%;
+    border: 1px black solid;
+}
+
+h1{
+    font-size: 3rem;
+    color: rgb(0, 81, 255);
+}
+
+p{
+    font-size: 1.5rem;
+    color: rgba(0,0,0,0.8);
+}
+
+a{
+    color: rgba(0, 81, 255, 0.7);
+    font-family: 'Lexend Deca', sans-serif;
+    /* height: 30px; */
+    font-weight: bolder;
+    font-size: 2vw;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    padding: 3%;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+}
+
+#header{
+    display: flex;
+}
+
+.inner{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}

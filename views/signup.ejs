@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signupstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sign up</title>
+</head> 
+<body>
+    <div class="form">
+        <span class="form__title">Sign Up</span>
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %>    
+        <% } %>
+
+        <form class="form__content" action="/signup" method="POST">
+            <div class="form__field">
+                <input type="text" name="userName" class="form__input" placeholder="User Name">
+                <i class="form__icon fa-solid fa-user"></i>
+            </div>
+            <div class="form__field">
+                <input type="email" name="email" class="form__input" placeholder="Email">
+                <i class="form__icon fa-solid fa-envelope"></i>
+            </div>
+            <div class="form__field">
+                <input type="password" name="password" class="form__input" placeholder="Password">
+                <i class="form__icon fa-solid fa-lock"></i>
+            </div>
+            <div class="form__field">
+                <input type="password" name="confirmPassword"  class="form__input" placeholder="Confirm Password">
+                <i class="form__icon fa-solid fa-lock"></i>
+            </div>
+            <div class="form__field">
+                <input type="text" name="team"  class="form__input" placeholder="Team Name">
+                <i class="form__icon fa-solid fa-user-group"></i>
+            </div>
+
+            <input type="submit" value="Send" class="form__btn">
+
+        </form>
+    </div>
+</body>
+</html>

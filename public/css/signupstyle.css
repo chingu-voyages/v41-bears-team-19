@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ------------ VARIABLES ------------ */
+:root{
+  /* FONT */
+  --font: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --color:  #66a7df;
+  --color-btn: #66a7df;
+  /* --color: #9176FF; */
+}
+
+/* ------------ BASE ---------------- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color);
+}
+
+a{
+  text-decoration: none;
+}
+
+/* ------------ FORM ---------------- */
+.form{
+  background-color: #fff;
+  width: 25em;
+  height: 35em;
+  /* border-radius: 1.5em; */
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0,0,0, .2);
+  padding: 2em;
+}
+
+.form__title{
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1em;
+  color: var(--color-btn);
+}
+
+.form__field{
+  margin: 2em 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  position: relative;
+}
+
+.form__icon{
+  font-size: 1.5rem;
+  margin-right: 0.5em;
+  color: gray;
+
+  transition: color .3s ease;
+}
+
+.form__icon--hide{
+  position: absolute;
+  font-size: 1.2rem;
+  top: 0;
+}
+
+.form__input{
+  width: 90%;
+  height: 1.5em;
+  font-size: 1.3rem;
+  border: none;
+  border-bottom: 2px solid silver;
+  outline: none;
+  padding: .2em;
+  color: rgb(82,82,82);
+}
+
+.form__input:focus{
+  border-bottom: 2px solid var(--color);
+}
+
+.form__input:focus ~ .form__icon{
+  color: var(--color);
+}
+
+.form__forgot-pass{
+  text-align: right;
+}
+
+.form__forgot-pass a{
+  font-size: 1.1rem;
+  color: var(--color);
+}
+
+.form__forgot-pass a:hover{
+  text-decoration: underline;
+}
+
+.form__btn{
+  display: inline-block;
+  width: 100%;
+  height: 2.3em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: var(--color-btn);
+  border: none;
+  /* border-radius: 1em; */
+  border-radius: 10px;
+  color: #fff;
+  padding: 0.5em 0;
+  margin: 1em 0;
+  cursor: pointer;
+
+  transition: background-color .3s ease;
+}
+
+.form__btn:hover{
+  color: var(--color-btn);
+  background-color: #fff;
+  border: 2px solid var(--color-btn);
+}
+
+.form__signup{
+  margin-top: 0.5em;
+  color: gray;
+}
+
+.form__signup a{
+  color: var(--color-btn);
+  font-weight: 500;
+}
+
+.form__signup a:hover{
+  text-decoration: underline;
+}

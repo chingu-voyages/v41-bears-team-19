@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAM TODO APP</title>
+    <script src="https://kit.fontawesome.com/c75e4678b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/todosstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- added a welcome to the user - JB-->
+        <h1 id="welcome">Welcome, <%= user.userName.toUpperCase() %> </h1>
+        <!-- <h2>Todos</h2> -->
+        <div id="logout-button"><a  style="text-decoration: none;" href="/logout">Logout</a></div>
+    </header>
+
+    <ul>
+        <table>
+            <!-- table header with 2 columns -->
+            <tr>
+                <th class="table-titles">Your ToDo's</th> 
+                <th class="table-titles"><%= user.team.toUpperCase() %> ToDo's</th>
+            </tr>
+            
+            <!-- table body One row two columns -->
+            <tr class="tr">
+
+                <!-- User todo list with dropdown -->
+                <td class="table-content">
+                    <% todos.forEach( el => { %>
+                    <li class='todoItem' data-id='<%=el._id%>'>
+                        <span class='<%= el.completed === true ? 'completed' : 'not'%> '><%= el.todo %></span>
+                        <span id="due-date" >Due Date: <%= el.dueDate ? el.dueDate : 'undefined' %></span>
+                        <!-- todo status dropdown menu here-->
+                        <select name="status" data-id='<%=el._id%>' class="statusDropdown">
+                            <option value="<%= el.status %>" selected>  <%= el.status %> </option>
+                            <% let options=["Not Started", "In Progress" , "Completed" ] %>
+                            <% options.forEach( option=> { %>
+                                <% if(option !==el.status) { %>
+                                    <option value="<%= option %>"> <%= option %> </option>
+                                <% } %>
+                            <% }) %>
+                        </select>
+                        <span id="delete-button" class="del fa-sharp fa-solid fa-trash"></span>
+                    </li>
+                    <% }) %> 
+                </td>
+
+
+                <!-- team todo list -->
+                <td class="table-content">
+                    <% team.forEach( el => { %>
+                        <li class='todoItem' data-id='<%=el._id%>'>
+                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo +" Assigned to:"+el.userName.toUpperCase() %></span>
+                            <span>Due Date: <%=el.dueDate%></span>
+                            <span>Status: <%=el.status%> </span>
+                            <!-- <span id="delete-button" class="del fa-sharp fa-solid fa-trash"></span> -->
+
+                        </li>
+                        <% }) %> 
+                </td>
+
+            </tr>
+            
+        </table>
+    </ul>
+
+    <!-- included team to the todo view -->
+    <!--took out 'Team' for better readability -JB -->
+    <h2><%= user.userName.toUpperCase() %> from <%= user.team.toUpperCase() %> has <%= left %> things left to do.</h2>
+
+    <!-- Create todo item and assign it to team member with duedate -->
+    <form class="footer"  action="/todos/createTodo" method='POST'>
+        <input id="todo-input" type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <label id="whos-todo" for="assign">Who's ToDo:</label>
+        <select class="input-buttons" id="assign" name="teamMember">
+        <% teamMembers.forEach( el => { %>
+            <option value="<%= el._id %>"> <%= el.userName==user.userName ? "ME" : el.userName.toUpperCase() %> </option>
+        <% }) %>  
+        </select> 
+        <input class="input-buttons" type="date" id="dueDate" name="dueDate">   
+        <input class="input-buttons" type="submit">
+    </form>
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>
