@@ -1,12 +1,13 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
+import headerLogo from '../../images/logo.svg';
 
 const Header = () => {
   return (
-    <header>
-      <h1 className="header__title">Welcome to the Pet Shelter!</h1>
+    <header className="header">
+      <img src={headerLogo} alt="" className="header__logo" />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
