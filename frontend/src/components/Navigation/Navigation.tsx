@@ -1,8 +1,10 @@
 import './Navigation.css';
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Navigation = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
+const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navigationLinks = [
     { title: 'Find Pets', url: 'find-pets' },
     { title: 'Donate', url: 'donate' },
@@ -12,7 +14,11 @@ const Navigation = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
 
   return (
     <nav className="nav">
-      <ul className={`nav__links ${isMenuOpen ? 'nav__links_visible' : ''}`}>
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className={`nav__button ${isMenuOpen ? 'nav__button_close' : ''}`}
+      ></button>
+      <ul className={`nav__links ${isMenuOpen ? 'nav__links_mobile' : ''}`}>
         {navigationLinks.map(({ title, url }) => (
           <li key={title}>
             <NavLink
