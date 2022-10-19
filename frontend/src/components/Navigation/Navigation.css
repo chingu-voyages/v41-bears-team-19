@@ -1,0 +1,24 @@
+.nav {
+  max-width: 360px;
+  width: 100%;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-family: 'Source Sans Pro', 'Franklin Gothic Medium',Arial, sans-serif;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.nav__link_active{
+  text-decoration: underline;
+}
