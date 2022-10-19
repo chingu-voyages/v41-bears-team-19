@@ -1,7 +1,8 @@
 import './Navigation.css';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
-const Navigation = () => {
+const Navigation = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
   const navigationLinks = [
     { title: 'Find Pets', url: 'find-pets' },
     { title: 'Donate', url: 'donate' },
@@ -11,9 +12,9 @@ const Navigation = () => {
 
   return (
     <nav className="nav">
-      <ul className="nav__links">
+      <ul className={`nav__links ${isMenuOpen ? 'nav__links_visible' : ''}`}>
         {navigationLinks.map(({ title, url }) => (
-          <li>
+          <li key={title}>
             <NavLink
               className={({ isActive }) =>
                 isActive ? 'nav__link nav__link_active' : 'nav__link'

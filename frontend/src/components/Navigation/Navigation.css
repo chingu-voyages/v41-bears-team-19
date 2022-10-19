@@ -6,8 +6,9 @@
 .nav__links {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
-  font-family: 'Source Sans Pro', 'Franklin Gothic Medium',Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
 .nav__link {
@@ -19,6 +20,12 @@
   color: #000000;
 }
 
-.nav__link_active{
+.nav__link_active {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 640px) {
+  .nav {
+    display: none;
+  }
 }
