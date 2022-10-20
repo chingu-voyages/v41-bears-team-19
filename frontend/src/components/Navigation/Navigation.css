@@ -59,7 +59,7 @@
   display: flex;
   flex-direction: column;
   position:fixed;
-  right: 120px;
+  right: 100px;
   top: 64px;
   padding: 20px;
   z-index: 2;

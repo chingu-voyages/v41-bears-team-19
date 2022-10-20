@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import './Header.css';
 import headerLogo from '../../images/logo.svg';
 import Navigation from '../Navigation/Navigation';
 import { Link } from 'react-router-dom';
-import MobileNavigation from '../MobileNavigation/MobileNavigation';
 
 const Header = () => {
  
@@ -15,7 +13,6 @@ const Header = () => {
       
 
       <Navigation/>
-      {/* <MobileNavigation /> */}
     </header>
   );
 };
