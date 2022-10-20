@@ -1,0 +1,6 @@
+.hero {
+    background-image: url('../../images/landing-page-hero-background.png');
+    background-position: 100%;
+    height: 100vh;
+    width: 100vw;
+}
