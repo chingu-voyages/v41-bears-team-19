@@ -5,8 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 0;
-    
+    border: 0; 
 }
 
 :root {
@@ -23,6 +22,7 @@
 /* Font styles */
 h1 {
     font-family: 'Oswald';
+    font-size: 50px;
 }
 
 /* Buttons */
@@ -39,4 +39,10 @@ button {
 
 .button__blue {
     background-color: var(--blue);
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
 }
