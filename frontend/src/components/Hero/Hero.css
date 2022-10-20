@@ -1,6 +1,7 @@
 .hero {
     background-image: url('../../images/landing-page-hero-background.png');
-    background-position: 100%;
-    height: 100vh;
+    background-size: cover;
+    height: 90vh;
     width: 100vw;
+    padding: 40px;
 }
