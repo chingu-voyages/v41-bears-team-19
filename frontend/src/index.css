@@ -42,6 +42,11 @@ button {
     background-color: var(--blue);
 }
 
+.button__white {
+    background-color: white;
+    color: var(--pink);
+}
+
 @media (max-width: 480px) {
     h1 {
         font-size: 32px;
