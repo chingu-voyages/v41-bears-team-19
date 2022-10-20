@@ -83,6 +83,10 @@
     flex-direction: column;
   }
 
+  .section_donate{
+    flex-direction: column-reverse;
+  }
+
   .section__items {
     margin: 0 auto;
   }
