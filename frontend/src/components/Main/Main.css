@@ -1,43 +1,55 @@
-.adopt {
-  background: #0050b6;
+.section {
   display: flex;
   justify-content: space-between;
   padding: 112px 75px;
   max-width: 1280px;
+  color: #ffffff;
 }
 
-.adopt__items {
+.section_adopt {
+  background: #0050b6;
+}
+
+.section_donate {
+  background: #fa7970;
+}
+
+.section_sponsor {
+  background: #daf3ff;
+  color: #000000;
+}
+
+.section__items {
   max-width: 480px;
   text-align: left;
 }
 
-.adopt__title {
+.section__title {
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
   line-height: 71px;
-  color: #ffffff;
   margin: 0;
 }
 
-.adopt__text {
+.section__text {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
   line-height: 45px;
-  color: #ffffff;
   margin: 18px 0px 31px;
 }
 
-.adopt__button {
+.section__button {
   max-width: 226px;
   width: 100%;
   min-height: 78px;
   background: #fa7970;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
+  border: none;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -49,44 +61,49 @@
   transition: opacity linear 0.3s;
 }
 
-.adopt__button:hover{
+.section__button_white {
+  color: #fa7970;
+  background: #ffffff;
+}
+
+.section__button:hover {
   opacity: 0.8;
 }
 
-.adopt__image-container {
+.section__image-container {
   max-width: 450px;
 }
 
-.adopt__image {
+.section__image {
   width: 100%;
 }
 
 @media screen and (max-width: 840px) {
-  .adopt {
+  .section {
     flex-direction: column;
   }
 
-  .adopt__items {
+  .section__items {
     margin: 0 auto;
   }
 
-  .adopt__image-container {
+  .section__image-container {
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .adopt__title {
+  .section__title {
     font-size: 32px;
     line-height: 46px;
   }
 
-  .adopt__text {
+  .section__text {
     font-size: 25px;
     line-height: 31px;
   }
 
-  .adopt__button {
+  .section__button {
     font-size: 28px;
     line-height: 45px;
   }
