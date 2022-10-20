@@ -6,4 +6,9 @@
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Oswald';
 }
