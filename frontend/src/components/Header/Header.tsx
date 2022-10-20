@@ -1,12 +1,20 @@
-import React from 'react'
-import './Header.css'
+import './Header.css';
+import headerLogo from '../../images/logo.svg';
+import Navigation from '../Navigation/Navigation';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+ 
   return (
-    <header>
-      <h1 className="header__title">Welcome to the Pet Shelter!</h1>
-    </header>
-  )
-}
+    <header className="header">
+      <Link to="/">
+        <img src={headerLogo} alt="" className="header__logo" />
+      </Link>
+      
 
-export default Header
+      <Navigation/>
+    </header>
+  );
+};
+
+export default Header;
