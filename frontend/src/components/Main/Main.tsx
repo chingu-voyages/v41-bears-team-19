@@ -33,13 +33,13 @@ const Main = () => {
         <div className="section__image-container">
           <img
             src={donateImage}
-            alt="Illustration of two happy dogs"
+            alt="Illustration of dog with toothbrush"
             className="section__image"
           />
         </div>
-        <div className="section__items">
+        <div className="section__items section__items_donate">
           <h2 className="section__title">Donate to your local shelters</h2>
-          <p className="section__text">Find shelters in your area do donate.</p>
+          <p className="section__text">Find shelters in your area to donate.</p>
           <Link to="donate">
             <button className="section__button section__button_white">
               Find Shelters
@@ -50,7 +50,7 @@ const Main = () => {
 
       <section className="section section_sponsor">
         <div className="section__items">
-          <h2 className="section__title">Sponsors animals in need</h2>
+          <h2 className="section__title">Sponsor animals in need</h2>
           <p className="section__text">
             Some animals need resources for long-term medical treatments, or you
             can choose to make a recurring donation to a shelter.
@@ -62,7 +62,7 @@ const Main = () => {
         <div className="section__image-container">
           <img
             src={sponsorImage}
-            alt="Illustration of two happy dogs"
+            alt="Illustration of cat in a kennel"
             className="section__image"
           />
         </div>

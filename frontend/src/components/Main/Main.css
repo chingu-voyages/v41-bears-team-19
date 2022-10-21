@@ -24,6 +24,10 @@
   text-align: left;
 }
 
+.section__items_donate{
+  text-align: right;
+}
+
 .section__title {
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
   font-style: normal;
@@ -37,9 +41,10 @@
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 45px;
   margin: 18px 0px 31px;
+  max-width: 480px;
 }
 
 .section__button {
@@ -76,11 +81,13 @@
 
 .section__image {
   width: 100%;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 840px) {
   .section {
     flex-direction: column;
+    padding: 85px  24px;
   }
 
   .section_donate{
@@ -92,8 +99,10 @@
   }
 
   .section__image-container {
-    margin: 0 auto;
+    margin: 54px auto 0;
+    max-height: 194px;
   }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -105,6 +114,7 @@
   .section__text {
     font-size: 25px;
     line-height: 31px;
+    max-width: 290px;
   }
 
   .section__button {
