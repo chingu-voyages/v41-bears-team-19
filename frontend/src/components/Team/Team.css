@@ -1,0 +1,35 @@
+.team {
+    background-color: var(--grey-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 75px;
+    max-width: 1280px;
+    color: #ffffff;
+}
+
+.team__grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .team__grid {
+        flex-direction: row;
+    }
+}
+
+.team__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.team__name {
+    font-size: 20px;
+    text-align: center;
+}
