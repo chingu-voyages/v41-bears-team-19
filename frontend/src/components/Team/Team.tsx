@@ -30,7 +30,7 @@ const Team = () => {
             <div className='team__card'>
                 <img src={TeamAvatar} />
                 <div className='team__name'>
-                    Henryque Lucena
+                    Muadd Ahmed
                     <br/>
                     Back End Developer
                 </div>

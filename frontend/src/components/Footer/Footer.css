@@ -1,0 +1,29 @@
+footer {
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 75px;
+    max-width: 1280px;
+    color: #ffffff;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+    }
+}
+
+.footer__team {
+    width: 30%;
+}
+
+.footer__about {
+    width: 50%;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
