@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px 12px;
 }
 
 .form-page__form {
@@ -13,8 +14,6 @@
   width: 100%;
   margin: 0;
 }
-
-
 
 .form-page__title {
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
@@ -29,7 +28,7 @@
   z-index: 1;
 }
 
-.form-page__title-decoration{
+.form-page__title-decoration {
   margin-top: -18px;
   position: relative;
 }
@@ -65,15 +64,15 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.form__text{
+.form__text {
   font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-color: var(--grey);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--grey);
 }
 
-.form__link{
+.form__link {
   color: var(--black);
 }

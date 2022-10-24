@@ -14,10 +14,6 @@
   margin: 0;
 }
 
-.login__title-items{
-
-}
-
 .login__title {
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
   font-style: normal;
@@ -31,7 +27,7 @@
   z-index: 1;
 }
 
-.login__title-decoration{
+.login__title-decoration {
   margin-top: -18px;
   position: relative;
 }
@@ -67,15 +63,15 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.login__text{
+.login__text {
   font-family: 'Source Sans Pro';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 25px;
-color: var(--grey);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--grey);
 }
 
-.login__link{
+.login__link {
   color: var(--black);
 }
