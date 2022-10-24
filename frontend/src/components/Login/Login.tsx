@@ -28,26 +28,26 @@ const Login = () => {
       submitHandler={handleSubmit}
     >
       <>
-        <label className="login__label" htmlFor="email">
+        <label className="form__label" htmlFor="email">
           Email
         </label>
         <input
           type="email"
           name="email"
           minLength={8}
-          className="login__input"
+          className="form__input"
           value={email}
           onChange={handleChange}
           required
         />
-        <label className="login__label" htmlFor="password">
+        <label className="form__label" htmlFor="password">
           Password
         </label>
         <input
           type="password"
           name="password"
           minLength={8}
-          className="login__input"
+          className="form__input"
           value={password}
           onChange={handleChange}
           required
@@ -57,7 +57,7 @@ const Login = () => {
           type="submit"
           value="Login"
           name="login"
-          className="login__submit"
+          className="form__submit"
         />
         <p className="login__text">
           No account?{' '}
