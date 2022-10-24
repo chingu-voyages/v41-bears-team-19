@@ -1,35 +1,33 @@
 import './Login.css';
 import loginDecoration from '../../images/login-decoration.svg';
-import  { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import FormPage from '../FormPage/FormPage';
 
 const Login = () => {
-
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if(event.target.name === 'email'){
-      setEmail(event.target.value)
+    if (event.target.name === 'email') {
+      setEmail(event.target.value);
     }
-    if(event.target.name ==='password'){
-      setPassword(event.target.value)
+    if (event.target.name === 'password') {
+      setPassword(event.target.value);
     }
-  }
+  };
 
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    console.log({email, password})
+  const handleSubmit = () => {
+    console.log({ email, password });
   };
 
   return (
-    <div className="login">
-      <div className="login__title-items">
-        <h2 className="login__title">Login</h2>
-        <img src={loginDecoration} alt="" className="login__title-decoration" />
-      </div>
-      <form onSubmit={handleSubmit} className="login__form">
+    <FormPage
+      title="Login"
+      decoration={loginDecoration}
+      submitHandler={handleSubmit}
+    >
+      <>
         <label className="login__label" htmlFor="email">
           Email
         </label>
@@ -40,6 +38,7 @@ const Login = () => {
           className="login__input"
           value={email}
           onChange={handleChange}
+          required
         />
         <label className="login__label" htmlFor="password">
           Password
@@ -51,6 +50,7 @@ const Login = () => {
           className="login__input"
           value={password}
           onChange={handleChange}
+          required
         />
         <p className="login__text">Forgot your password?</p>
         <input
@@ -67,8 +67,8 @@ const Login = () => {
             </Link>
           }{' '}
         </p>
-      </form>
-    </div>
+      </>
+    </FormPage>
   );
 };
 
