@@ -1,11 +1,18 @@
 import './Login.css';
 import loginDecoration from '../../images/login-decoration.svg';
-import React from 'react';
+import  { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Login = () => {
-  const handleSubmit = (event: React.FormEvent) => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('')
+
+
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+    console.log({email, password})
   };
 
   return (
@@ -23,6 +30,8 @@ const Login = () => {
           name="email"
           minLength={8}
           className="login__input"
+          value={email}
+          onChange={(event)=> setEmail(event.target.value)}
         />
         <label className="login__label" htmlFor="password">
           Password
@@ -32,6 +41,8 @@ const Login = () => {
           name="password"
           minLength={8}
           className="login__input"
+          value={password}
+          onChange={(event)=>setPassword(event.target.value)}
         />
         <p className="login__text">Forgot your password?</p>
         <input
