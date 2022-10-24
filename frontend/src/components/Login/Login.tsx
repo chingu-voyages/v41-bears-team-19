@@ -1,6 +1,6 @@
 import './Login.css';
 import loginDecoration from '../../images/login-decoration.svg';
-import  { FormEvent, useState } from 'react';
+import  { ChangeEvent, FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -9,6 +9,14 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
 
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if(event.target.name === 'email'){
+      setEmail(event.target.value)
+    }
+    if(event.target.name ==='password'){
+      setPassword(event.target.value)
+    }
+  }
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -31,7 +39,7 @@ const Login = () => {
           minLength={8}
           className="login__input"
           value={email}
-          onChange={(event)=> setEmail(event.target.value)}
+          onChange={handleChange}
         />
         <label className="login__label" htmlFor="password">
           Password
@@ -42,7 +50,7 @@ const Login = () => {
           minLength={8}
           className="login__input"
           value={password}
-          onChange={(event)=>setPassword(event.target.value)}
+          onChange={handleChange}
         />
         <p className="login__text">Forgot your password?</p>
         <input
