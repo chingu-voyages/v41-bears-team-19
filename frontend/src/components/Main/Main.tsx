@@ -4,10 +4,12 @@ import donateImage from '../../images/dogbrush.png';
 import sponsorImage from '../../images/cat-mailbox.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Hero from '../Hero/Hero';
 
 const Main = () => {
   return (
     <main className="main">
+      <Hero />
       <section className="section section_adopt">
         <div className="section__items">
           <h2 className="section__title">Adopt pets in your area</h2>
