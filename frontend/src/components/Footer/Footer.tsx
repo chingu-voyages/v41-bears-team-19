@@ -7,11 +7,11 @@ const Footer = () => {
         <div className='footer__team'>
             <h2>Team</h2>
             <br/>
-            <p><a href="https://www.linkedin.com/in/amandavieiradev/">Amanda Vieira</a></p>
-            <p><a href="https://www.linkedin.com/in/devin-jaggernauth/">Devin Jaggernauth</a></p>
-            <p><a href="https://www.linkedin.com/in/henryque-lucena/">Henryque Lucena</a></p>
-            <p><a href="https://www.linkedin.com/in/muaad-ahmed-a84a58157/">Muadd Ahmed</a></p>
-            <p><a href="https://github.com/fedechaves">Federico Chave</a></p>
+            <p><a href="https://www.linkedin.com/in/amandavieiradev/" target="_blank" rel="noopener noreferrer">Amanda Vieira</a></p>
+            <p><a href="https://www.linkedin.com/in/devin-jaggernauth/" target="_blank" rel="noopener noreferrer">Devin Jaggernauth</a></p>
+            <p><a href="https://www.linkedin.com/in/henryque-lucena/" target="_blank" rel="noopener noreferrer">Henryque Lucena</a></p>
+            <p><a href="https://www.linkedin.com/in/muaad-ahmed-a84a58157/" target="_blank" rel="noopener noreferrer">Muadd Ahmed</a></p>
+            <p><a href="https://github.com/fedechaves" target="_blank" rel="noopener noreferrer">Federico Chave</a></p>
         </div>
 
         <div className='footer__about'>
