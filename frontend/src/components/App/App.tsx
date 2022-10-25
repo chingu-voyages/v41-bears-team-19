@@ -1,15 +1,22 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
-import Hero from '../Hero/Hero';
 import Main from '../Main/Main';
+import Login from '../Login/Login';
+import Team from '../Team/Team';
+import Footer from '../Footer/Footer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Hero />
-      <Main />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Main />} />
+      </Routes>
+      <Team />
+      <Footer />
     </div>
   );
 }
