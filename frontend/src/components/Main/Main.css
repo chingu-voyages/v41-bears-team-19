@@ -51,24 +51,12 @@
   max-width: 226px;
   width: 100%;
   max-height: 78px;
-  background: var(--pink);
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-size: 20px;
-  color: var(--white);
-  opacity: 1;
   transition: opacity linear 0.3s;
-}
-
-.section__button_white {
-  color: var(--pink);
-  background: var(--white);
-  max-height: 78px;
 }
 
 .section__button:hover {
   opacity: 0.8;
-}
+} 
 
 .section__image-container {
   max-width: 450px;

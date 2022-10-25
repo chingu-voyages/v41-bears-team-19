@@ -17,7 +17,7 @@ const Main = () => {
             Find cats, dogs and other pets available right near you.
           </p>
           <Link to="find-pets">
-            <button className="section__button section__button_red">
+            <button className="section__button">
               Adopt
             </button>
           </Link>
@@ -43,7 +43,7 @@ const Main = () => {
           <h2 className="section__title">Donate to your local shelters</h2>
           <p className="section__text">Find shelters in your area to donate.</p>
           <Link to="donate">
-            <button className="section__button section__button_white">
+            <button className="section__button button__white">
               Find Shelters
             </button>
           </Link>
