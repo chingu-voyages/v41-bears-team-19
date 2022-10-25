@@ -2,9 +2,10 @@ import './Main.css';
 import adoptImage from '../../images/adopt-pets.png';
 import donateImage from '../../images/dogbrush.png';
 import sponsorImage from '../../images/cat-mailbox.png';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../Hero/Hero';
+import Team from '../Team/Team';
+
 
 const Main = () => {
   return (
@@ -69,6 +70,8 @@ const Main = () => {
           />
         </div>
       </section>
+      <Team />
+
     </main>
   );
 };
