@@ -6,8 +6,6 @@ const Team = () => {
   return (
     <section className='team'>
         <h2>Meet our team</h2>
-        <br/>
-        <br/>
         <div className='team__grid'>
             <div className='team__card'>
                 <img src={TeamAvatar} />

@@ -8,6 +8,10 @@
     color: #ffffff;
 }
 
+.team > h2 {
+    margin-bottom: 1.5rem;
+}
+
 .team__grid {
     display: flex;
     flex-direction: column;
