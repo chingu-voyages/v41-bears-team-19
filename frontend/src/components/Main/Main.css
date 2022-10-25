@@ -55,11 +55,9 @@
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-size: 20px;
-  line-height: 45px;
   color: var(--white);
   opacity: 1;
   transition: opacity linear 0.3s;
-  margin: 10px;
 }
 
 .section__button_white {
