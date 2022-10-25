@@ -4,14 +4,13 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer>
-
         <div className='footer__team'>
             <h2>Team</h2>
             <br/>
             <p><a href="https://www.linkedin.com/in/amandavieiradev/">Amanda Vieira</a></p>
             <p><a href="https://www.linkedin.com/in/devin-jaggernauth/">Devin Jaggernauth</a></p>
             <p><a href="https://www.linkedin.com/in/henryque-lucena/">Henryque Lucena</a></p>
-            <p><a href="#">Muadd Ahmed</a></p>
+            <p><a href="https://www.linkedin.com/in/muaad-ahmed-a84a58157/">Muadd Ahmed</a></p>
             <p><a href="https://github.com/fedechaves">Federico Chave</a></p>
         </div>
 
@@ -21,7 +20,6 @@ const Footer = () => {
         <p>This is a voluntary project made as part of Chingu’s Voyage v41, a cohort of developers that join to create web apps collaboratively. See our source code here.
         To know more about Chingu’s mission, click here.</p>
         </div>
-
     </footer>
     
 
