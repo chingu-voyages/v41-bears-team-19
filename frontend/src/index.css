@@ -9,7 +9,6 @@
 }
 
 :root {
-<<<<<<< HEAD
     font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
     /* Color variables */
     --pink: #fa7970;
@@ -19,17 +18,7 @@
     --yellow: #fff202;
     --grey: #666;
     --white: #fff;
-=======
-  font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
-  /* Color variables */
-  --pink: #fa7970;
-  --light-blue: #daf3ff;
-  --blue: #0050b6;
-  --grey-blue: #607999;
-  --yellow: #fff202;
-  --grey: #666;
-  --black: #000000;
->>>>>>> development
+    --black: #000000;
 }
 
 /* Font styles */
