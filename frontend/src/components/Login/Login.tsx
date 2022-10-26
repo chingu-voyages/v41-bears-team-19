@@ -1,7 +1,7 @@
 import './Login.css';
 import loginDecoration from '../../images/login-decoration.svg';
 import { ChangeEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import FormPage from '../FormPage/FormPage';
 
 const Login = () => {
@@ -62,10 +62,10 @@ const Login = () => {
         <p className="login__text">
           No account?{' '}
           {
-            <Link className="login__link" to="register">
-              Register now.{' '}
+            <Link className="login__link" to="/register" relative="path">
+              Register now.
             </Link>
-          }{' '}
+          }
         </p>
       </>
     </FormPage>
