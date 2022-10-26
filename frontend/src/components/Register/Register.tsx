@@ -16,13 +16,7 @@ const Register = () => {
         <label className="form__label" htmlFor="email">
           Email
         </label>
-        <input
-          type="email"
-          name="email"
-          minLength={8}
-          className="form__input"
-          required
-        />
+        <input type="email" name="email" className="form__input" required />
         <label className="form__label" htmlFor="password">
           Password
         </label>
@@ -33,10 +27,40 @@ const Register = () => {
           className="form__input"
           required
         />
-        <p className="login__text">Forgot your password?</p>
+        <label className="form__label" htmlFor="name">
+          Name
+        </label>
+        <input
+          name="name"
+          minLength={2}
+          maxLength={30}
+          className="form__input"
+          required
+        />
+        <label className="form__label" htmlFor="city">
+          City
+        </label>
+        <input
+          name="city"
+          minLength={2}
+          maxLength={30}
+          className="form__input"
+          required
+        />
+
+        <label className="form__label" htmlFor="phone">
+          Phone
+        </label>
+        <input
+          name="phone"
+          type="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          className="form__input"
+        />
+
         <input
           type="submit"
-          value="Login"
+          value="Register"
           name="login"
           className="form__submit"
         />
