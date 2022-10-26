@@ -1,5 +1,6 @@
 import './FormPage.css';
 import { FormEvent, ReactElement } from 'react';
+import { totalmem } from 'os';
 
 interface FormPageProps {
   title: string;
@@ -14,6 +15,8 @@ const FormPage = ({
   children,
   submitHandler,
 }: FormPageProps) => {
+
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     submitHandler();
@@ -21,12 +24,12 @@ const FormPage = ({
 
   return (
     <div className="form-page">
-      <div>
+      <div className="form-page__text">
         <h2 className="form-page__title">{title}</h2>
         <img
           src={decoration}
           alt="Decorative squiggle"
-          className="form-page__title-decoration"
+          className={`form-page__decoration ${title === "Register"? 'form-page__decoration_register': ''}`}
         />
       </div>
       <form onSubmit={handleSubmit} className="form-page__form">

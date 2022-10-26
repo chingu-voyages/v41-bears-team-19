@@ -1,7 +1,7 @@
 import './Register.css';
 import FormPage from '../FormPage/FormPage';
 import { Link } from 'react-router-dom';
-import registerDecoration from '../../images/spiral-down-pink.png';
+import registerDecoration from '../../images/spiral-blue.png';
 
 const Register = () => {
   const handleSubmit = () => {};
