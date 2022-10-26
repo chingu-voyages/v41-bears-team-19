@@ -16,7 +16,7 @@
 }
 
 .form-page__title {
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-family: var(--form-text);
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -34,7 +34,7 @@
 }
 
 .form__label {
-  font-family: 'Oswald';
+  font-family: var(--form-text);
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -65,7 +65,7 @@
 }
 
 .form__text {
-  font-family: 'Source Sans Pro';
+  font-family: var(--main-text);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -75,4 +75,5 @@
 
 .form__link {
   color: var(--black);
+  font: var(--main-text);
 }

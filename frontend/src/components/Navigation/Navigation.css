@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
+  font-family: var(--header-text);
   padding: 0;
 }
 
