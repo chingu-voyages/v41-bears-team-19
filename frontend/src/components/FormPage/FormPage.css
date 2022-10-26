@@ -56,7 +56,7 @@
   border-radius: 40px;
   padding: 20px 40px;
   background-color: var(--pink);
-  color: white;
+  color: var(--white);
   font-weight: 600;
   font-size: 20px;
   margin: 20px 0;

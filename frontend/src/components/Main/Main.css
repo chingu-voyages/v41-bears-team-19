@@ -29,7 +29,7 @@
 }
 
 .section__title {
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-family: var(--main-title);
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
