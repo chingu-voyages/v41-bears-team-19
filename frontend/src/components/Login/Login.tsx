@@ -3,55 +3,59 @@ import loginDecoration from '../../images/login-decoration.svg';
 import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FormPage from '../FormPage/FormPage';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+interface LoginData {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.name === 'email') {
-      setEmail(event.target.value);
-    }
-    if (event.target.name === 'password') {
-      setPassword(event.target.value);
-    }
-  };
-
-  const handleSubmit = () => {
-    console.log({ email, password });
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ defaultValues: {
+    email: '',
+    password: ''
+  }});
 
   return (
     <FormPage
       title="Login"
       decoration={loginDecoration}
-      submitHandler={handleSubmit}
+      submitHandler={handleSubmit((data) => console.log(data))}
     >
       <>
         <label className="form__label" htmlFor="email">
           Email
         </label>
         <input
-          type="email"
-          name="email"
-          minLength={8}
+          {...register('email', {
+            required: 'Email address is required',
+            pattern: { value: /^\S+@\S+$/i, message: 'Invalid Email address' },
+          })}
           className="form__input"
-          value={email}
-          onChange={handleChange}
-          required
         />
+
+        <p className="form__error">{errors.email?.message}</p>
+
         <label className="form__label" htmlFor="password">
           Password
         </label>
+
         <input
-          type="password"
-          name="password"
-          minLength={8}
+          {...register('password', {
+            required: 'Password cannot be empty',
+            minLength: {
+              value: 8,
+              message: 'Password must be at least 8 characters',
+            },
+          })}
           className="form__input"
-          value={password}
-          onChange={handleChange}
-          required
         />
+         <p className="form__error">{errors.password?.message}</p>
+
         <p className="login__text">Forgot your password?</p>
         <input
           type="submit"

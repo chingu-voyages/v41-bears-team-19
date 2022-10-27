@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px 12px 64px;
-  height: 60vh;
+  min-height: 60vh;
 }
 
 .form-page__form {
@@ -49,7 +49,7 @@
   background-color: var(--light-blue);
   border-radius: 40px;
   min-height: 52px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   padding: 0px 20px;
 }
 
@@ -76,4 +76,13 @@
 
 .form__link {
   color: var(--black);
+}
+
+.form__error{
+  text-align: end;
+  color: var(--pink);
+  font-size: 14px;
+  margin-top: -14px;
+  padding: 0px 20px;
+  min-height: 16px;
 }
