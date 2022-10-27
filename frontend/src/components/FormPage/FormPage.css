@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+.form-page__text{
+  position: relative;
+}
+
 .form-page__title {
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
   font-style: normal;
@@ -29,13 +33,17 @@
   z-index: 1;
 }
 
-.form-page__title-decoration {
+.form-page__decoration {
   margin-top: -18px;
   position: relative;
 }
 
 .form-page__decoration_search{
-
+  position: absolute;
+  width: 100px;
+  transform: rotate(335deg);
+  top:30px;
+  left:-45px;
 }
 
 .form__label {
