@@ -5,6 +5,7 @@ import Main from '../Main/Main';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import './App.css';
+import Search from '../Search/Search';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/" element={<Main />} />
       </Routes>
       <Footer />
