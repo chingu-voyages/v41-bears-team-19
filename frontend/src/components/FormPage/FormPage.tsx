@@ -26,7 +26,9 @@ const FormPage = ({
         <img
           src={decoration}
           alt="Decorative squiggle"
-          className="form-page__title-decoration"
+          className={`form-page__decoration ${
+            title === 'Register' ? 'form-page__decoration_register' : ''
+          } ${title === 'Search' ? 'form-page__decoration_search' : ''}`}
         />
       </div>
       <form onSubmit={handleSubmit} className="form-page__form">
