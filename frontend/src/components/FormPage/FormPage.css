@@ -20,8 +20,12 @@
   position: relative;
 }
 
+.form-page__text {
+  position: relative;
+}
+
 .form-page__title {
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-family: var(--form-text);
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -31,6 +35,7 @@
   color: var(--black);
   position: relative;
   z-index: 1;
+  margin-bottom: 20px;
 }
 
 .form-page__decoration {
@@ -43,11 +48,17 @@
   width: 100px;
   transform: rotate(335deg);
   top: 30px;
-  left: -45px;
+  left: -45px;}
+  
+.form-page__decoration_register {
+  position: absolute;
+  height: 67px;
+  top: 0;
+  right: -20px;
 }
 
 .form__label {
-  font-family: 'Oswald';
+  font-family: var(--form-text);
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -57,11 +68,17 @@
   margin-bottom: 6px;
 }
 
+.form__label_radio {
+  font-family: var(--main-text);
+  text-transform: none;
+  margin-left: 4px;
+}
+
 .form__input {
   background-color: var(--light-blue);
   border-radius: 40px;
   min-height: 52px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   padding: 0px 20px;
 }
 
@@ -69,7 +86,7 @@
   border-radius: 40px;
   padding: 20px 40px;
   background-color: var(--pink);
-  color: white;
+  color: var(--white);
   font-weight: 600;
   font-size: 20px;
   margin: 20px 0;
@@ -81,8 +98,13 @@
   margin: 0px 0px 20px;
 }
 
+.form__submit_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .form__text {
-  font-family: 'Source Sans Pro';
+  font-family: var(--main-text);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -92,4 +114,20 @@
 
 .form__link {
   color: var(--black);
+  font: var(--main-text);
+}
+
+.form__error {
+  text-align: end;
+  color: var(--pink);
+  font-size: 14px;
+  margin-top: -14px;
+  padding: 0px 20px;
+  min-height: 16px;
+}
+
+.form__radio-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 12px;
 }
