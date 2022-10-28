@@ -1,9 +1,9 @@
 import './Login.css';
 import loginDecoration from '../../images/login-decoration.svg';
 import { useEffect } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FormPage from '../FormPage/FormPage';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 interface LoginData {
   email: string;

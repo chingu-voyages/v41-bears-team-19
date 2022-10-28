@@ -1,10 +1,41 @@
 import './Register.css';
 import FormPage from '../FormPage/FormPage';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import registerDecoration from '../../images/spiral-blue.png';
 
+interface RegisterData {
+  email: string;
+  password: string;
+  name: string;
+  city: string;
+  phone: string;
+}
+
 const Register = () => {
-  const handleSubmit = () => {};
+  const {
+    register,
+    handleSubmit,
+    formState,
+    formState: { errors, isValid, isDirty },
+    reset,
+  } = useForm({
+    defaultValues: {
+      email: '',
+      password: '',
+      name: '',
+      city: '',
+      phone: '',
+    },
+    mode: 'onChange',
+  });
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ email: '', password: '', name: '', city: '', phone: '' });
+    }
+  }, [formState, reset]);
 
   return (
     <FormPage
@@ -16,53 +47,95 @@ const Register = () => {
         <label className="form__label" htmlFor="email">
           Email
         </label>
-        <input type="email" name="email" className="form__input" required />
+
+        <input
+          {...register('email', {
+            required: 'Email address is required',
+            pattern: { value: /^\S+@\S+$/i, message: 'Invalid Email address' },
+          })}
+          className="form__input"
+        />
+        <p className="form__error">{errors.email?.message}</p>
+
         <label className="form__label" htmlFor="password">
           Password
         </label>
+
         <input
-          type="password"
-          name="password"
-          minLength={8}
+          {...register('password', {
+            required: 'Password cannot be empty',
+            minLength: {
+              value: 8,
+              message: 'Password must be at least 8 characters',
+            },
+          })}
           className="form__input"
-          required
+          type="password"
         />
+        <p className="form__error">{errors.password?.message}</p>
+
         <label className="form__label" htmlFor="name">
           Name
         </label>
+
         <input
-          name="name"
-          minLength={2}
-          maxLength={30}
+          {...register('name', {
+            required: 'Name cannot be empty',
+            minLength: {
+              value: 2,
+              message: 'Name must be at least 2 characters'
+            },
+            maxLength: 30,
+          })}
+         
           className="form__input"
-          required
         />
+  
+        <p className="form__error">{errors.name?.message}</p>
+
+
+
         <label className="form__label" htmlFor="city">
           City
         </label>
         <input
-          name="city"
-          minLength={2}
-          maxLength={30}
+          {...register('city', {
+            required: 'City cannot be empty',
+            minLength: {
+              value: 2,
+              message: 'City must be at least 2 characters'
+            },
+            maxLength: 40,
+          })}
+         
           className="form__input"
-          required
         />
+  
+        <p className="form__error">{errors.city?.message}</p>
+
 
         <label className="form__label" htmlFor="phone">
           Phone
         </label>
+
+
         <input
-          name="phone"
-          type="tel"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          {...register('phone', {
+            required: 'Phone number is required',
+            pattern: { value: /[0-9]{3}-[0-9]{3}-[0-9]{4}/, message: 'Invalid phone number' },
+          })}
           className="form__input"
         />
+
+        <p className="form__error">{errors.phone?.message}</p>
+
 
         <input
           type="submit"
           value="Register"
-          name="login"
-          className="form__submit"
+          name="register"
+          className={`form__submit ${!isValid ? 'form__submit_disabled' : ''}`}
+          disabled={!isDirty && !isValid}
         />
         <p className="login__text">
           Already have an account?{' '}
