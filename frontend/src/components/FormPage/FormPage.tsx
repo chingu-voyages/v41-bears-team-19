@@ -1,6 +1,5 @@
 import './FormPage.css';
 import { FormEvent, ReactElement } from 'react';
-import { totalmem } from 'os';
 
 interface FormPageProps {
   title: string;
