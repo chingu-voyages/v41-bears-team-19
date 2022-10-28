@@ -1,7 +1,7 @@
 import './Search.css';
 import searchDecoration from '../../images/spiral-down-pink.png';
 import searchPet from '../../images/search-pet.png';
-import React from 'react';
+import { useEffect } from 'react';
 import FormPage from '../FormPage/FormPage';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -14,9 +14,21 @@ const Search = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { isValid, isDirty },
-  } = useForm();
+    formState,
+    reset,
+  } = useForm({
+    defaultValues: {
+      query: '',
+    },
+    mode: 'onChange',
+  });
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ query: '' });
+    }
+  }, [formState, reset]);
 
   const submitSearchData = (data: SearchQuery) => {
     console.log(data);
@@ -38,8 +50,9 @@ const Search = () => {
         />
         <input
           type="submit"
-          // className="form__submit form__submit_search"
-          className={`form__submit form__submit_search ${!isValid ? 'form__submit_disabled' : ''}`}
+          className={`form__submit form__submit_search ${
+            !isValid ? 'form__submit_disabled' : ''
+          }`}
           disabled={!isDirty && !isValid}
         />
         <div className="search__buttons">
