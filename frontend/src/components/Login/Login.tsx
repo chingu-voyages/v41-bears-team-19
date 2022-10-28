@@ -1,6 +1,6 @@
 import './Login.css';
 import loginDecoration from '../../images/login-decoration.svg';
-import { ChangeEvent, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FormPage from '../FormPage/FormPage';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -13,18 +13,33 @@ interface LoginData {
 const Login = () => {
   const {
     register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ defaultValues: {
-    email: '',
-    password: ''
-  }});
+    handleSubmit, formState,
+    formState: { errors, isValid, isDirty }, reset
+  } = useForm({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    mode: 'onChange',
+  });
+
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ email: '', password: '' });
+    }
+  }, [formState, reset]);
+
+  const submitLoginData = (data: LoginData) =>{
+    console.log(data)
+  }
+
 
   return (
     <FormPage
       title="Login"
       decoration={loginDecoration}
-      submitHandler={handleSubmit((data) => console.log(data))}
+      submitHandler={handleSubmit(submitLoginData)}
     >
       <>
         <label className="form__label" htmlFor="email">
@@ -53,23 +68,25 @@ const Login = () => {
             },
           })}
           className="form__input"
+          type="password"
         />
-         <p className="form__error">{errors.password?.message}</p>
+        <p className="form__error">{errors.password?.message}</p>
 
         <p className="login__text">Forgot your password?</p>
         <input
           type="submit"
           value="Login"
           name="login"
-          className="form__submit"
+          className={`form__submit ${!isValid ? 'form__submit_disabled' : ''}`}
+          disabled={!isDirty && !isValid}
         />
         <p className="login__text">
           No account?{' '}
           {
             <Link className="login__link" to="register">
-              Register now.{' '}
+              Register now.
             </Link>
-          }{' '}
+          }
         </p>
       </>
     </FormPage>
