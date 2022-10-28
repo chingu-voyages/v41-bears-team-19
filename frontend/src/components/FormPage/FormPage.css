@@ -60,7 +60,7 @@
   background-color: var(--light-blue);
   border-radius: 40px;
   min-height: 52px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   padding: 0px 20px;
 }
 
@@ -76,6 +76,11 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.form__submit_disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .form__text {
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -87,4 +92,13 @@
 
 .form__link {
   color: var(--black);
+}
+
+.form__error{
+  text-align: end;
+  color: var(--pink);
+  font-size: 14px;
+  margin-top: -14px;
+  padding: 0px 20px;
+  min-height: 16px;
 }
