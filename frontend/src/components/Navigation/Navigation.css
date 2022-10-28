@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
+  font-family: var(--header-text);
   padding: 0;
 }
 
@@ -20,7 +20,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 30px;
-  color: #000000;
+  color: var(--black);
 }
 
 .nav__link_active {
@@ -63,7 +63,7 @@
   top: 64px;
   padding: 20px;
   z-index: 2;
-  background-color: #fff;
+  background-color: var(--white);
  }
 
  .nav__link{

@@ -29,7 +29,7 @@
 }
 
 .section__title {
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-family: var(--main-title);
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
@@ -38,7 +38,7 @@
 }
 
 .section__text {
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-family: var(--main-text);
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
