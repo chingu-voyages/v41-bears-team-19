@@ -11,6 +11,7 @@ interface RegisterData {
   name: string;
   city: string;
   phone: string;
+  userType: string;
 }
 
 const Register = () => {
@@ -19,9 +20,9 @@ const Register = () => {
     handleSubmit,
     formState,
     formState: { errors, isValid, isDirty },
-    reset,
   } = useForm({
     defaultValues: {
+      userType: 'individual',
       email: '',
       password: '',
       name: '',
@@ -31,11 +32,11 @@ const Register = () => {
     mode: 'onChange',
   });
 
-  useEffect(() => {
-    if (formState.isSubmitSuccessful) {
-      reset({ email: '', password: '', name: '', city: '', phone: '' });
-    }
-  }, [formState, reset]);
+  // useEffect(() => {
+  //   if (formState.isSubmitSuccessful) {
+  //     reset({ email: '', password: '', name: '', city: '', phone: '', userType:'individual' });
+  //   }
+  // }, [formState, reset]);
 
   const submitRegisterData = (data: RegisterData) => {
     console.log(data);
@@ -48,6 +49,25 @@ const Register = () => {
       submitHandler={handleSubmit(submitRegisterData)}
     >
       <>
+        <p className="form__label">User Type</p>
+        <div className="form__radio-buttons">
+          <div>
+            <input
+              {...register('userType')}
+              type="radio"
+              value="individual"
+              defaultChecked
+            />
+            <label className='form__label_radio' htmlFor="individual" defaultChecked>
+              Individual
+            </label>
+          </div>
+          <div>
+            <input {...register('userType')} type="radio" value="shelter" />
+            <label className='form__label_radio' htmlFor="shelter">Shelter</label>
+          </div>
+        </div>
+
         <label className="form__label" htmlFor="email">
           Email
         </label>
@@ -87,17 +107,14 @@ const Register = () => {
             required: 'Name cannot be empty',
             minLength: {
               value: 2,
-              message: 'Name must be at least 2 characters'
+              message: 'Name must be at least 2 characters',
             },
             maxLength: 30,
           })}
-         
           className="form__input"
         />
-  
+
         <p className="form__error">{errors.name?.message}</p>
-
-
 
         <label className="form__label" htmlFor="city">
           City
@@ -107,32 +124,31 @@ const Register = () => {
             required: 'City cannot be empty',
             minLength: {
               value: 2,
-              message: 'City must be at least 2 characters'
+              message: 'City must be at least 2 characters',
             },
             maxLength: 40,
           })}
-         
           className="form__input"
         />
-  
-        <p className="form__error">{errors.city?.message}</p>
 
+        <p className="form__error">{errors.city?.message}</p>
 
         <label className="form__label" htmlFor="phone">
           Phone
         </label>
 
-
         <input
           {...register('phone', {
             required: 'Phone number is required',
-            pattern: { value: /[0-9]{3}-?[0-9]{3}-?[0-9]{4}/, message: 'Invalid phone number' },
+            pattern: {
+              value: /[0-9]{3}-?[0-9]{3}-?[0-9]{4}/,
+              message: 'Invalid phone number',
+            },
           })}
           className="form__input"
         />
 
         <p className="form__error">{errors.phone?.message}</p>
-
 
         <input
           type="submit"
