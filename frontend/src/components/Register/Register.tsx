@@ -37,11 +37,15 @@ const Register = () => {
     }
   }, [formState, reset]);
 
+  const submitRegisterData = (data: RegisterData) => {
+    console.log(data);
+  };
+
   return (
     <FormPage
       title="Register"
       decoration={registerDecoration}
-      submitHandler={handleSubmit}
+      submitHandler={handleSubmit(submitRegisterData)}
     >
       <>
         <label className="form__label" htmlFor="email">
@@ -122,7 +126,7 @@ const Register = () => {
         <input
           {...register('phone', {
             required: 'Phone number is required',
-            pattern: { value: /[0-9]{3}-[0-9]{3}-[0-9]{4}/, message: 'Invalid phone number' },
+            pattern: { value: /[0-9]{3}-?[0-9]{3}-?[0-9]{4}/, message: 'Invalid phone number' },
           })}
           className="form__input"
         />
