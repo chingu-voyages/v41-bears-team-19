@@ -13,8 +13,10 @@ interface LoginData {
 const Login = () => {
   const {
     register,
-    handleSubmit, formState,
-    formState: { errors, isValid, isDirty }, reset
+    handleSubmit,
+    formState,
+    formState: { errors, isValid, isDirty },
+    reset,
   } = useForm({
     defaultValues: {
       email: '',
@@ -23,17 +25,15 @@ const Login = () => {
     mode: 'onChange',
   });
 
-
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset({ email: '', password: '' });
     }
   }, [formState, reset]);
 
-  const submitLoginData = (data: LoginData) =>{
-    console.log(data)
-  }
-
+  const submitLoginData = (data: LoginData) => {
+    console.log(data);
+  };
 
   return (
     <FormPage
