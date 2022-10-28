@@ -9,27 +9,33 @@
 }
 
 :root {
-    font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
-    /* Color variables */
-    --pink: #fa7970;
-    --light-blue: #daf3ff;
-    --blue: #0050b6;
-    --grey-blue: #607999;
-    --yellow: #fff202;
-    --grey: #666;
-    --white: #fff;
-    --black: #000000;
+  font-family: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
+  /* Color variables */
+  --pink: #fa7970;
+  --light-blue: #daf3ff;
+  --blue: #0050b6;
+  --grey-blue: #607999;
+  --yellow: #fff202;
+  --grey: #666;
+  --white: #fff;
+  --black: #000000;
+
+  /* Font Variables */
+  --header-text: 'Source Sans Pro', 'Franklin Gothic Medium', Arial, sans-serif;
+  --main-text: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  --main-title: 'Oswald', Arial, Helvetica, sans-serif;
+  --form-text: 'Oswald', Arial, Helvetica, sans-serif;
 }
 
 /* Font styles */
 h1 {
-  font-family: 'Oswald';
+  font-family: var(--main-title);
   font-size: 50px;
 }
 
 h2 {
-    font-family: 'Oswald';
-    font-size: 36px;
+  font-family: var(--main-title);
+  font-size: 36px;
 }
 
 /* Buttons */
