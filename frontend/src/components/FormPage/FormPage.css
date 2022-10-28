@@ -57,7 +57,7 @@
   margin-bottom: 6px;
 }
 
-.form__label_radio{
+.form__label_radio {
   font-family: var(--main-text);
   text-transform: none;
   margin-left: 4px;
@@ -83,7 +83,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.form__submit_disabled{
+.form__submit_disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -102,7 +102,7 @@
   font: var(--main-text);
 }
 
-.form__error{
+.form__error {
   text-align: end;
   color: var(--pink);
   font-size: 14px;
@@ -111,7 +111,7 @@
   min-height: 16px;
 }
 
-.form__radio-buttons{
+.form__radio-buttons {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 12px;
