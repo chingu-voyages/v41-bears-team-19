@@ -58,7 +58,9 @@
 }
 
 .form__label_radio{
-
+  font-family: var(--main-text);
+  text-transform: none;
+  margin-left: 4px;
 }
 
 .form__input {
@@ -112,5 +114,5 @@
 .form__radio-buttons{
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }

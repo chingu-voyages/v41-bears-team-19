@@ -19,6 +19,7 @@ const Register = () => {
     register,
     handleSubmit,
     formState,
+    reset,
     formState: { errors, isValid, isDirty },
   } = useForm({
     defaultValues: {
@@ -32,11 +33,11 @@ const Register = () => {
     mode: 'onChange',
   });
 
-  // useEffect(() => {
-  //   if (formState.isSubmitSuccessful) {
-  //     reset({ email: '', password: '', name: '', city: '', phone: '', userType:'individual' });
-  //   }
-  // }, [formState, reset]);
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ email: '', password: '', name: '', city: '', phone: '', userType:'individual' });
+    }
+  }, [formState, reset]);
 
   const submitRegisterData = (data: RegisterData) => {
     console.log(data);
@@ -58,13 +59,13 @@ const Register = () => {
               value="individual"
               defaultChecked
             />
-            <label className='form__label_radio' htmlFor="individual" defaultChecked>
+            <label className='form__label form__label_radio' htmlFor="individual" defaultChecked>
               Individual
             </label>
           </div>
           <div>
             <input {...register('userType')} type="radio" value="shelter" />
-            <label className='form__label_radio' htmlFor="shelter">Shelter</label>
+            <label className='form__label form__label_radio' htmlFor="shelter">Shelter</label>
           </div>
         </div>
 
