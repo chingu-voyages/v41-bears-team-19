@@ -10,7 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 150px;
   width: 100%;
   margin: 0;
   text-decoration: none;
@@ -22,4 +21,6 @@
 
 .search__link{
   text-decoration: none;
+  max-width: 150px;
+  width: 100%;
 }
