@@ -5,6 +5,7 @@ interface Pets {
     photo: string,
     type: string,
     location: string
+    img? : string
 }
 
 const PetData: Pets[] = [
