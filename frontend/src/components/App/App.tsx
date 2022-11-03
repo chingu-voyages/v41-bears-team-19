@@ -8,6 +8,7 @@ import './App.css';
 import Search from '../Search/Search';
 import Register from '../Register/Register';
 import AdoptPage from '../AdoptPage/AdoptPage';
+import UserProfile from '../User/UserProfile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/adopt" element={<AdoptPage />} />
 
+        <Route path="/user" element={<UserProfile />} />
         <Route path="/" element={<Main />} />
       </Routes>
       <Footer />
