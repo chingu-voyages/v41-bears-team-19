@@ -1,26 +1,27 @@
 footer {
     background-color: var(--pink);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 20px 75px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 50px 75px;
     max-width: 1280px;
     color: var(--white);
     gap: 20px;
+    font-size: 12px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
     footer {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
     }
 }
 
-.footer__team {
-    width: 30%;
+h2 {
+    margin-bottom: 10px;
 }
 
-.footer__about {
-    width: 50%;
+.footer__team {
+    font-size: 14px;
 }
 
 footer a {
