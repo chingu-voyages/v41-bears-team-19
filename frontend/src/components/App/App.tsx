@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 import './App.css';
 import Search from '../Search/Search';
 import Register from '../Register/Register';
+import UserProfile from '../UserProfile/UserProfile';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/user" element={<UserProfile />} />
         <Route path="/" element={<Main />} />
       </Routes>
       <Footer />

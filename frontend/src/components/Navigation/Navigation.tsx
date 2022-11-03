@@ -9,6 +9,7 @@ const Navigation = () => {
     { title: 'Find Pets', url: 'search' },
     { title: 'Donate', url: 'donate' },
     { title: 'Sponsor', url: 'sponsor' },
+    { title: 'User', url: 'user' },
     { title: 'Login', url: 'login' },
   ];
 
