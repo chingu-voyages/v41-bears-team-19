@@ -29,13 +29,8 @@ const teamData: TeamMember[] = [
         role: "Back End Developer",
         img: "https://media-exp1.licdn.com/dms/image/C4D03AQGZQQaXtrQIJA/profile-displayphoto-shrink_200_200/0/1644509581102?e=1672272000&v=beta&t=lYcWmnrWCWJREGJSCJfCBqos1QweruomI8pzuPMTqI0",
         linkedin: "https://www.linkedin.com/in/fedechavesflecha/"
-    },
-    {
-        name: "Henryque Lucena",
-        role: "Back End Developer",
-        img: "https://media-exp1.licdn.com/dms/image/C4E03AQFxGl6uZlWp4A/profile-displayphoto-shrink_200_200/0/1617714704179?e=1672272000&v=beta&t=5ZIuB4PxEpUQMrC3p595AeGPSEUN1qgMIpP90l5f6RI",
-        linkedin: "https://www.linkedin.com/in/henryque-lucena/"
     }
 ]
 
+export default teamData
 export default teamData

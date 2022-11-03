@@ -8,7 +8,6 @@ const Footer = () => {
             <h2>Team</h2>
             <p><a href="https://www.linkedin.com/in/amandavieiradev/" target="_blank" rel="noopener noreferrer">Amanda Vieira</a></p>
             <p><a href="https://www.linkedin.com/in/devin-jaggernauth/" target="_blank" rel="noopener noreferrer">Devin Jaggernauth</a></p>
-            <p><a href="https://www.linkedin.com/in/henryque-lucena/" target="_blank" rel="noopener noreferrer">Henryque Lucena</a></p>
             <p><a href="https://www.linkedin.com/in/muaad-ahmed-a84a58157/" target="_blank" rel="noopener noreferrer">Muadd Ahmed</a></p>
             <p><a href="https://github.com/fedechaves" target="_blank" rel="noopener noreferrer">Federico Chaves</a></p>
         </div>
