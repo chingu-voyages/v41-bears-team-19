@@ -8,7 +8,7 @@ const Hero = () => {
             <h1>Find your next friend</h1>
             <h2>Adopt pets in your area or help animal shelters.</h2>
 
-            <NavLink to={"/start-here"}><button>Start here</button></NavLink>
+            <NavLink to={"/search"}><button>Start here</button></NavLink>
         </div>
     )
 }

@@ -1,0 +1,26 @@
+.search__buttons {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.search__button {
+  max-height: 44px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+}
+
+.search__image {
+  max-width: 320px;
+}
+
+.search__link{
+  text-decoration: none;
+  max-width: 150px;
+  width: 100%;
+}

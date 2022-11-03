@@ -1,6 +1,5 @@
 import './FormPage.css';
 import { FormEvent, ReactElement } from 'react';
-import { totalmem } from 'os';
 
 interface FormPageProps {
   title: string;
@@ -24,13 +23,17 @@ const FormPage = ({
 
   return (
     <div className="form-page">
-      <div className="form-page__text">
-        <h2 className="form-page__title">{title}</h2>
-        <img
-          src={decoration}
-          alt="Decorative squiggle"
-          className={`form-page__decoration ${title === "Register"? 'form-page__decoration_register': ''}`}
-        />
+      <div>
+        <div className="form-page__text">
+          <h2 className="form-page__title">{title}</h2>
+          <img
+            src={decoration}
+            alt="Decorative squiggle"
+            className={`form-page__decoration ${
+              title === 'Register' ? 'form-page__decoration_register' : ''
+            } ${title === 'Start Here' ? 'form-page__decoration_search' : ''}`}
+          />
+        </div>
       </div>
       <form onSubmit={handleSubmit} className="form-page__form">
         {children}
