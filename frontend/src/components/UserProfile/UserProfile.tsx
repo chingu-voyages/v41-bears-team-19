@@ -1,4 +1,4 @@
-import UserPic from '../../images/placeholder/user1.png'
+import UserPic from '../../images/placeholder/user1.jpg'
 import UserFrame from '../../images/frame8.png'
 import LocationIcon from '../../images/location.png'
 import './UserProfile.css'
