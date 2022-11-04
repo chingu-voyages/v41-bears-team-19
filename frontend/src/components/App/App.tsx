@@ -5,7 +5,6 @@ import Main from '../Main/Main';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import './App.css';
-import PetCard from '../PetCard/PetCard';
 
 function App() {
   return (
