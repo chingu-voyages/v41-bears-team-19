@@ -6,7 +6,7 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigationLinks = [
-    { title: 'Find Pets', url: 'find-pets' },
+    { title: 'Find Pets', url: 'search' },
     { title: 'Donate', url: 'donate' },
     { title: 'Sponsor', url: 'sponsor' },
     { title: 'Login', url: 'login' },

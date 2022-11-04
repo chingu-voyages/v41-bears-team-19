@@ -14,6 +14,8 @@ const FormPage = ({
   children,
   submitHandler,
 }: FormPageProps) => {
+
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     submitHandler();
@@ -22,12 +24,16 @@ const FormPage = ({
   return (
     <div className="form-page">
       <div>
-        <h2 className="form-page__title">{title}</h2>
-        <img
-          src={decoration}
-          alt="Decorative squiggle"
-          className="form-page__title-decoration"
-        />
+        <div className="form-page__text">
+          <h2 className="form-page__title">{title}</h2>
+          <img
+            src={decoration}
+            alt="Decorative squiggle"
+            className={`form-page__decoration ${
+              title === 'Register' ? 'form-page__decoration_register' : ''
+            } ${title === 'Start Here' ? 'form-page__decoration_search' : ''}`}
+          />
+        </div>
       </div>
       <form onSubmit={handleSubmit} className="form-page__form">
         {children}
