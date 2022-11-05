@@ -7,7 +7,7 @@ export const server = new ApolloServer({
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground]
 });
 
-const PORT = 3000;
+const PORT = 5500;
 
 server.listen(PORT).then(({ url }) => {
   console.log(`🚀 Server running on ${url}`);
