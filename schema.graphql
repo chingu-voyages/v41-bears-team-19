@@ -7,6 +7,10 @@ enum GenderEnum {
   male
 }
 
+type Mutation {
+  createPet(age: Int!, breed: String, gender: GenderEnum!, location: String!, name: String!, neutered: Boolean!, photo: String!, shelter: String!, type: String!, vaccinated: Boolean!): Pet!
+}
+
 type Pet {
   age: Int!
   breed: String
