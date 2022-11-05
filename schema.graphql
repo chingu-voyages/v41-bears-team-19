@@ -8,7 +8,7 @@ enum GenderEnum {
 }
 
 type Mutation {
-  createPet(age: Int!, breed: String, gender: GenderEnum!, location: String!, name: String!, neutered: Boolean!, photo: String!, shelter: String!, type: String!, vaccinated: Boolean!): Pet!
+  createPet(adopted: Boolean, age: Int!, breed: String, gender: GenderEnum!, location: String!, name: String!, neutered: Boolean, photo: String!, shelter: String!, type: String!, vaccinated: Boolean): Pet!
 }
 
 type Pet {
