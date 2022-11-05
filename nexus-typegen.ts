@@ -29,6 +29,7 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  Mutation: {};
   Pet: { // root type
     age: number; // Int!
     breed?: string | null; // String
@@ -56,6 +57,9 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
+  Mutation: { // field return type
+    createPet: NexusGenRootTypes['Pet']; // Pet!
+  }
   Pet: { // field return type
     age: number; // Int!
     breed: string | null; // String
@@ -75,6 +79,9 @@ export interface NexusGenFieldTypes {
 }
 
 export interface NexusGenFieldTypeNames {
+  Mutation: { // field return type name
+    createPet: 'Pet'
+  }
   Pet: { // field return type name
     age: 'Int'
     breed: 'String'
@@ -94,6 +101,20 @@ export interface NexusGenFieldTypeNames {
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    createPet: { // args
+      age: number; // Int!
+      breed?: string | null; // String
+      gender: NexusGenEnums['GenderEnum']; // GenderEnum!
+      location: string; // String!
+      name: string; // String!
+      neutered: boolean; // Boolean!
+      photo: string; // String!
+      shelter: string; // String!
+      type: string; // String!
+      vaccinated: boolean; // Boolean!
+    }
+  }
 }
 
 export interface NexusGenAbstractTypeMembers {
