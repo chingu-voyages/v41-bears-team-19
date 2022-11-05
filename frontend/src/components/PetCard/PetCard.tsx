@@ -1,21 +1,28 @@
 import './PetCard.css';
-import location from '../../images/location.png';
-import rabbit from '../../images/barnaby.png';
+import pin from '../../images/location.png';
 
 import React from 'react';
 
-const PetCard = () => {
+interface Pet {
+  name: string;
+  age: number;
+  type: string;
+  photo: string;
+  location: string;
+}
+
+const PetCard = ({ name, age, type, photo, location }: Pet) => {
   return (
     <article className="card">
-      <img src={rabbit} alt="" className="card__image" />
-      <h2 className="card__title">Barnaby</h2>
+      <img src={photo} alt="" className="card__image" />
+      <h2 className="card__title">{name}</h2>
       <div className="card__buttons">
-        <button className="card__button card__button_pet">Bunny</button>
-        <button className="card__button card__button_age">1 year</button>
+        <button className="card__button card__button_pet">{type}</button>
+        <button className="card__button card__button_age">{age}</button>
       </div>
       <div className="card__location">
-        <img src={location} alt="" className="card__pin" />
-        <p className="card__text">Boulder, Colorado</p>
+        <img src={pin} alt="" className="card__pin" />
+        <p className="card__text">{location}</p>
       </div>
     </article>
   );
