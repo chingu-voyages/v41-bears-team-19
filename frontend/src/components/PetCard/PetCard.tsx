@@ -3,7 +3,7 @@ import pin from '../../images/location.png';
 
 import React from 'react';
 
-interface Pet {
+export interface Pet {
   name: string;
   age: number;
   type: string;
@@ -18,7 +18,7 @@ const PetCard = ({ name, age, type, photo, location }: Pet) => {
       <h2 className="card__title">{name}</h2>
       <div className="card__buttons">
         <button className="card__button card__button_pet">{type}</button>
-        <button className="card__button card__button_age">{age}</button>
+        <button className="card__button card__button_age">{age} year</button>
       </div>
       <div className="card__location">
         <img src={pin} alt="" className="card__pin" />
