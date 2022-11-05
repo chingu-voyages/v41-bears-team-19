@@ -17,6 +17,7 @@ export interface NexusGenInputs {
 }
 
 export interface NexusGenEnums {
+  GenderEnum: "female" | "male"
 }
 
 export interface NexusGenScalars {
@@ -28,6 +29,19 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  Pet: { // root type
+    age: number; // Int!
+    breed?: string | null; // String
+    gender: NexusGenEnums['GenderEnum']; // GenderEnum!
+    id: number; // Int!
+    location: string; // String!
+    name: string; // String!
+    neutered?: boolean | null; // Boolean
+    photo: string; // String!
+    shelter: string; // String!
+    type: string; // String!
+    vaccinated?: boolean | null; // Boolean
+  }
   Query: {};
 }
 
@@ -39,17 +53,43 @@ export interface NexusGenUnions {
 
 export type NexusGenRootTypes = NexusGenObjects
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
+  Pet: { // field return type
+    age: number; // Int!
+    breed: string | null; // String
+    gender: NexusGenEnums['GenderEnum']; // GenderEnum!
+    id: number; // Int!
+    location: string; // String!
+    name: string; // String!
+    neutered: boolean | null; // Boolean
+    photo: string; // String!
+    shelter: string; // String!
+    type: string; // String!
+    vaccinated: boolean | null; // Boolean
+  }
   Query: { // field return type
-    ok: boolean; // Boolean!
+    allPets: NexusGenRootTypes['Pet'][]; // [Pet!]!
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  Pet: { // field return type name
+    age: 'Int'
+    breed: 'String'
+    gender: 'GenderEnum'
+    id: 'Int'
+    location: 'String'
+    name: 'String'
+    neutered: 'Boolean'
+    photo: 'String'
+    shelter: 'String'
+    type: 'String'
+    vaccinated: 'Boolean'
+  }
   Query: { // field return type name
-    ok: 'Boolean'
+    allPets: 'Pet'
   }
 }
 
@@ -66,7 +106,7 @@ export type NexusGenObjectNames = keyof NexusGenObjects;
 
 export type NexusGenInputNames = never;
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = keyof NexusGenEnums;
 
 export type NexusGenInterfaceNames = never;
 

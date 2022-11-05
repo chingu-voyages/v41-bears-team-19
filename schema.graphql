@@ -2,6 +2,25 @@
 ### Do not make changes to this file directly
 
 
+enum GenderEnum {
+  female
+  male
+}
+
+type Pet {
+  age: Int!
+  breed: String
+  gender: GenderEnum!
+  id: Int!
+  location: String!
+  name: String!
+  neutered: Boolean
+  photo: String!
+  shelter: String!
+  type: String!
+  vaccinated: Boolean
+}
+
 type Query {
-  ok: Boolean!
+  allPets: [Pet!]!
 }
