@@ -103,16 +103,17 @@ export interface NexusGenFieldTypeNames {
 export interface NexusGenArgTypes {
   Mutation: {
     createPet: { // args
+      adopted?: boolean | null; // Boolean
       age: number; // Int!
       breed?: string | null; // String
       gender: NexusGenEnums['GenderEnum']; // GenderEnum!
       location: string; // String!
       name: string; // String!
-      neutered: boolean; // Boolean!
+      neutered?: boolean | null; // Boolean
       photo: string; // String!
       shelter: string; // String!
       type: string; // String!
-      vaccinated: boolean; // Boolean!
+      vaccinated?: boolean | null; // Boolean
     }
   }
 }

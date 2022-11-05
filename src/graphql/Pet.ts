@@ -66,8 +66,9 @@ export const PetMutation = extendType({
         breed: stringArg(),
         shelter: nonNull(stringArg()),
         photo: nonNull(stringArg()),
-        vaccinated: nonNull(booleanArg()),
-        neutered: nonNull(booleanArg()),
+        vaccinated: booleanArg(),
+        neutered: booleanArg(),
+        adopted: booleanArg()
       },
       resolve(parent, args, context) {
         const {
