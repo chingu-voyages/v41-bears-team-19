@@ -1,0 +1,10 @@
+.adopt{
+  padding: 112px 75px;
+  max-width: 1280px;
+}
+
+.results{
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+}

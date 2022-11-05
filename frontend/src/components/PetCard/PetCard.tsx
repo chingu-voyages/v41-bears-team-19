@@ -3,7 +3,8 @@ import pin from '../../images/location.png';
 
 import React from 'react';
 
-interface Pet {
+export interface Pet {
+  id: number;
   name: string;
   age: number;
   type: string;
@@ -11,7 +12,8 @@ interface Pet {
   location: string;
 }
 
-const PetCard = ({ name, age, type, photo, location }: Pet) => {
+const PetCard = ({ pet }: any) => {
+  const { name, age, type, photo, location } = pet;
   return (
     <article className="card">
       <img src={photo} alt="" className="card__image" />
