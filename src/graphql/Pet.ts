@@ -22,8 +22,14 @@ export const Pet = objectType({
     t.nonNull.string('type');
     t.nonNull.field('gender', { type: GenderEnum });
     t.nonNull.string('location');
+    t.nonNull.int('shelterId');
     t.field('shelter', {
       type: 'Shelter',
+      resolve(parent, args, context) {
+        return context.prisma.shelter.findUnique({
+          where: { id: parent.shelterId },
+        });
+      },
     });
     t.nonNull.string('photo');
     t.string('breed');
