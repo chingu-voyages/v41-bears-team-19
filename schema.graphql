@@ -2,6 +2,11 @@
 ### Do not make changes to this file directly
 
 
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
 enum GenderEnum {
   female
   male
@@ -9,13 +14,15 @@ enum GenderEnum {
 
 type Mutation {
   createPet(adopted: Boolean, age: Int!, breed: String, gender: GenderEnum!, location: String!, name: String!, neutered: Boolean, photo: String!, shelter: String!, type: String!, vaccinated: Boolean): Pet!
+  login(email: String!, password: String!): AuthPayload!
+  signup(email: String!, location: String!, name: String!, password: String!, type: UserType!): AuthPayload!
 }
 
 type Pet {
+  adopted: Boolean
   age: Int!
   breed: String
   gender: GenderEnum!
-  id: Int!
   location: String!
   name: String!
   neutered: Boolean
@@ -27,4 +34,24 @@ type Pet {
 
 type Query {
   allPets: [Pet!]!
+  petsByLocation(location: String!): [Pet]!
+}
+
+type Shelter {
+  id: Int
+  name: String!
+  pets: [Pet]
+}
+
+type User {
+  email: String!
+  id: ID!
+  location: String!
+  name: String!
+  type: UserType!
+}
+
+enum UserType {
+  INDIVIDUAL
+  SHELTER
 }
