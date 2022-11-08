@@ -44,7 +44,7 @@ export interface NexusGenObjects {
     name: string; // String!
     neutered?: boolean | null; // Boolean
     photo: string; // String!
-    shelter: string; // String!
+    shelter?: NexusGenRootTypes['Shelter'] | null; // Shelter
     type: string; // String!
     vaccinated?: boolean | null; // Boolean
   }
@@ -92,7 +92,7 @@ export interface NexusGenFieldTypes {
     name: string; // String!
     neutered: boolean | null; // Boolean
     photo: string; // String!
-    shelter: string; // String!
+    shelter: NexusGenRootTypes['Shelter'] | null; // Shelter
     type: string; // String!
     vaccinated: boolean | null; // Boolean
   }
@@ -133,7 +133,7 @@ export interface NexusGenFieldTypeNames {
     name: 'String'
     neutered: 'Boolean'
     photo: 'String'
-    shelter: 'String'
+    shelter: 'Shelter'
     type: 'String'
     vaccinated: 'Boolean'
   }

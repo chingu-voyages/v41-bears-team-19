@@ -22,18 +22,14 @@ export const Pet = objectType({
     t.nonNull.string('type');
     t.nonNull.field('gender', { type: GenderEnum });
     t.nonNull.string('location');
-    t.nonNull.string('shelter')
-    // t.field('shelter', {
-    //   type: 'Shelter',
-    //   resolve(parent, args, context){
-    //     return context.prisma.
-    //   }
-    // })
+    t.field('shelter', {
+      type: 'Shelter',
+    });
     t.nonNull.string('photo');
     t.string('breed');
     t.boolean('vaccinated');
     t.boolean('neutered');
-    t.boolean('adopted')
+    t.boolean('adopted');
   },
 });
 
