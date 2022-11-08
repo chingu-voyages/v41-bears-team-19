@@ -28,6 +28,7 @@ type Pet {
   neutered: Boolean
   photo: String!
   shelter: Shelter
+  shelterId: Int!
   type: String!
   vaccinated: Boolean
 }
