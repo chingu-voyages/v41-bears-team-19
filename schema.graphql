@@ -23,6 +23,7 @@ type Pet {
   age: Int!
   breed: String
   gender: GenderEnum!
+  id: ID
   location: String!
   name: String!
   neutered: Boolean

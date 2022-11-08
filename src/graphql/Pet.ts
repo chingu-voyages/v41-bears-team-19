@@ -16,7 +16,7 @@ const GenderEnum = enumType({
 export const Pet = objectType({
   name: 'Pet',
   definition(t) {
-    // t.id('id');
+    t.id('id');
     t.nonNull.string('name');
     t.nonNull.int('age');
     t.nonNull.string('type');
@@ -44,6 +44,7 @@ export const PetQuery = extendType({
   definition(t) {
     t.nonNull.list.nonNull.field('allPets', {
       type: 'Pet',
+      // @ts-ignore
       resolve(parent, args, context) {
         const result = context.prisma.pet.findMany({});
         return result;
