@@ -18,6 +18,7 @@ export interface NexusGenInputs {
 
 export interface NexusGenEnums {
   GenderEnum: "female" | "male"
+  UserType: "INDIVIDUAL" | "SHELTER"
 }
 
 export interface NexusGenScalars {
@@ -29,12 +30,16 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  AuthPayload: { // root type
+    token: string; // String!
+    user: NexusGenRootTypes['User']; // User!
+  }
   Mutation: {};
   Pet: { // root type
+    adopted?: boolean | null; // Boolean
     age: number; // Int!
     breed?: string | null; // String
     gender: NexusGenEnums['GenderEnum']; // GenderEnum!
-    id: number; // Int!
     location: string; // String!
     name: string; // String!
     neutered?: boolean | null; // Boolean
@@ -44,6 +49,18 @@ export interface NexusGenObjects {
     vaccinated?: boolean | null; // Boolean
   }
   Query: {};
+  Shelter: { // root type
+    id?: number | null; // Int
+    name: string; // String!
+    pets?: Array<NexusGenRootTypes['Pet'] | null> | null; // [Pet]
+  }
+  User: { // root type
+    email: string; // String!
+    id: string; // ID!
+    location: string; // String!
+    name: string; // String!
+    type: NexusGenEnums['UserType']; // UserType!
+  }
 }
 
 export interface NexusGenInterfaces {
@@ -57,14 +74,20 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
+  AuthPayload: { // field return type
+    token: string; // String!
+    user: NexusGenRootTypes['User']; // User!
+  }
   Mutation: { // field return type
     createPet: NexusGenRootTypes['Pet']; // Pet!
+    login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
+    signup: NexusGenRootTypes['AuthPayload']; // AuthPayload!
   }
   Pet: { // field return type
+    adopted: boolean | null; // Boolean
     age: number; // Int!
     breed: string | null; // String
     gender: NexusGenEnums['GenderEnum']; // GenderEnum!
-    id: number; // Int!
     location: string; // String!
     name: string; // String!
     neutered: boolean | null; // Boolean
@@ -75,18 +98,37 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     allPets: NexusGenRootTypes['Pet'][]; // [Pet!]!
+    petsByLocation: Array<NexusGenRootTypes['Pet'] | null>; // [Pet]!
+  }
+  Shelter: { // field return type
+    id: number | null; // Int
+    name: string; // String!
+    pets: Array<NexusGenRootTypes['Pet'] | null> | null; // [Pet]
+  }
+  User: { // field return type
+    email: string; // String!
+    id: string; // ID!
+    location: string; // String!
+    name: string; // String!
+    type: NexusGenEnums['UserType']; // UserType!
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  AuthPayload: { // field return type name
+    token: 'String'
+    user: 'User'
+  }
   Mutation: { // field return type name
     createPet: 'Pet'
+    login: 'AuthPayload'
+    signup: 'AuthPayload'
   }
   Pet: { // field return type name
+    adopted: 'Boolean'
     age: 'Int'
     breed: 'String'
     gender: 'GenderEnum'
-    id: 'Int'
     location: 'String'
     name: 'String'
     neutered: 'Boolean'
@@ -97,6 +139,19 @@ export interface NexusGenFieldTypeNames {
   }
   Query: { // field return type name
     allPets: 'Pet'
+    petsByLocation: 'Pet'
+  }
+  Shelter: { // field return type name
+    id: 'Int'
+    name: 'String'
+    pets: 'Pet'
+  }
+  User: { // field return type name
+    email: 'String'
+    id: 'ID'
+    location: 'String'
+    name: 'String'
+    type: 'UserType'
   }
 }
 
@@ -114,6 +169,22 @@ export interface NexusGenArgTypes {
       shelter: string; // String!
       type: string; // String!
       vaccinated?: boolean | null; // Boolean
+    }
+    login: { // args
+      email: string; // String!
+      password: string; // String!
+    }
+    signup: { // args
+      email: string; // String!
+      location: string; // String!
+      name: string; // String!
+      password: string; // String!
+      type: NexusGenEnums['UserType']; // UserType!
+    }
+  }
+  Query: {
+    petsByLocation: { // args
+      location: string; // String!
     }
   }
 }

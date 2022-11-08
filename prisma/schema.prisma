@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+    url      = env("DATABASE_URL")
 }
 
 model Pet {
@@ -18,11 +18,36 @@ model Pet {
   type        String
   gender      String    
   location    String
-  shelter     String
-  breed       String?
+  shelterId   Int
+  shelter     Shelter @relation(fields: [shelterId], references: [id])
   photo       String
+  breed       String?
   vaccinated  Boolean?  @default(false)
   neutered    Boolean?  @default(false)
   adopted     Boolean?  @default(false)
+  // postedBy    User?     @relation(fields: [postedById], references:[id])
+  // postedById  Int
+}
 
+model User {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  name        String
+  email       String   @unique
+  password    String
+  type        UserType @default(INDIVIDUAL)
+  location    String
+  // pets        Pet[]
+}
+
+model Shelter {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  name        String
+  pets        Pet[]
+}
+
+enum UserType {
+  INDIVIDUAL
+  SHELTER
 }
