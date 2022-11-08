@@ -40,6 +40,7 @@ export interface NexusGenObjects {
     age: number; // Int!
     breed?: string | null; // String
     gender: NexusGenEnums['GenderEnum']; // GenderEnum!
+    id?: string | null; // ID
     location: string; // String!
     name: string; // String!
     neutered?: boolean | null; // Boolean
@@ -88,6 +89,7 @@ export interface NexusGenFieldTypes {
     age: number; // Int!
     breed: string | null; // String
     gender: NexusGenEnums['GenderEnum']; // GenderEnum!
+    id: string | null; // ID
     location: string; // String!
     name: string; // String!
     neutered: boolean | null; // Boolean
@@ -130,6 +132,7 @@ export interface NexusGenFieldTypeNames {
     age: 'Int'
     breed: 'String'
     gender: 'GenderEnum'
+    id: 'ID'
     location: 'String'
     name: 'String'
     neutered: 'Boolean'
