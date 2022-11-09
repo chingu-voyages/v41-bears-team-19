@@ -1,6 +1,17 @@
-import barnaby from '../../images/barnaby.png';
-import flora from '../../images/flora.png';
-import amy from '../../images/amy.png';
+import { useQuery, gql } from '@apollo/client';
+
+export const FEED_QUERY = gql`
+  {
+    allPets {
+      id
+      name
+      age
+      location
+      type
+      photo
+    }
+  }
+`;
 
 export const pets = [
   {
@@ -9,7 +20,7 @@ export const pets = [
     age: 1,
     location: 'Boulder, Colorado',
     type: 'Bunny',
-    photo: barnaby,
+    photo: '',
   },
   {
     id: 2,
@@ -17,7 +28,7 @@ export const pets = [
     age: 1,
     location: 'Boulder, Colorado',
     type: 'Dog',
-    photo: flora,
+    photo: '',
   },
   {
     id: 42,
@@ -25,6 +36,6 @@ export const pets = [
     age: 1,
     location: 'Boulder, Colorado',
     type: 'Cat',
-    photo: amy,
+    photo: '',
   },
 ];
