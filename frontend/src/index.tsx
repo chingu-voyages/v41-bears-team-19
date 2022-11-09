@@ -19,6 +19,22 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+} from '@apollo/client';
+
+const httplink = createHttpLink({
+  uri: 'http://localhost:5500',
+});
+
+const client = new ApolloClient({
+  link: httplink,
+  cache: new InMemoryCache(),
+});
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
