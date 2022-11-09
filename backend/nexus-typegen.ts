@@ -101,7 +101,6 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     allPets: NexusGenRootTypes['Pet'][]; // [Pet!]!
-    petsByLocation: Array<NexusGenRootTypes['Pet'] | null>; // [Pet]!
   }
   Shelter: { // field return type
     id: number | null; // Int
@@ -144,7 +143,6 @@ export interface NexusGenFieldTypeNames {
   }
   Query: { // field return type name
     allPets: 'Pet'
-    petsByLocation: 'Pet'
   }
   Shelter: { // field return type name
     id: 'Int'
@@ -188,8 +186,9 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
-    petsByLocation: { // args
-      location: string; // String!
+    allPets: { // args
+      location?: string | null; // String
+      type?: string | null; // String
     }
   }
 }

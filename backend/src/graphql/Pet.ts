@@ -44,21 +44,22 @@ export const PetQuery = extendType({
   definition(t) {
     t.nonNull.list.nonNull.field('allPets', {
       type: 'Pet',
+      args: {
+        location: stringArg(),
+        type: stringArg(),
+      },
       // @ts-ignore
       resolve(parent, args, context) {
-        const result = context.prisma.pet.findMany({});
+        const where = args
+          ? {
+              OR: [
+                { location: { contains: args.location as string } },
+                { type: { equals: args.type as string } },
+              ],
+            }
+          : {};
+        const result = context.prisma.pet.findMany({ where });
         return result;
-      },
-    });
-    t.nonNull.list.field('petsByLocation', {
-      type: 'Pet',
-      args: { location: nonNull(stringArg()) },
-      // @ts-ignore
-      resolve(parent, args, context, info) {
-        const { location } = args;
-        return context.prisma.pet.findMany({
-          where: { location: { contains: location } },
-        });
       },
     });
   },
