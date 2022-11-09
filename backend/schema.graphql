@@ -35,8 +35,7 @@ type Pet {
 }
 
 type Query {
-  allPets: [Pet!]!
-  petsByLocation(location: String!): [Pet]!
+  allPets(location: String, type: String): [Pet!]!
 }
 
 type Shelter {
