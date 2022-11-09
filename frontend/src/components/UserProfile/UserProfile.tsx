@@ -4,15 +4,23 @@ import LocationIcon from '../../images/location.png'
 import './UserProfile.css'
 import ShelterData from '../../services/shelterData'
 import PetData from '../../services/petData'
+import PetCard from '../PetCard/PetCard'
 
 const UserProfile = () => {    
 
     const adoptedPets = PetData.map((pet) => {
-        return <div key={pet.id} className='user__pet-card'>
-            <img src={pet.img} alt={pet.name} className='user__pet-img' />
+        /* return <div key={pet.id} className='user__pet-card'>
+            <img src={pet.photo} alt={pet.name} className='user__pet-img' />
             <h3>{pet.name}</h3>
             <span className='user__pet-age'>{pet.age} year(s)</span>
-            </div>
+            </div> */
+        return <PetCard key={pet.id} 
+                name={pet.name}
+                age={pet.age}
+                photo={pet.photo}
+                type={pet.type}
+                location={pet.location}
+        />
     })
 
     const sheltersDonated = ShelterData.map((shelter) => {
