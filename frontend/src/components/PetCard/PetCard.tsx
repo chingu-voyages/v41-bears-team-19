@@ -12,15 +12,17 @@ export interface Pet {
   location: string;
 }
 
-const PetCard = ({ pet }: any) => {
-  const { name, age, type, photo, location } = pet;
+
+const PetCard = ({ name, age, type, photo, location }: Pet) => {
+
   return (
     <article className="card">
       <img src={photo} alt="" className="card__image" />
       <h2 className="card__title">{name}</h2>
       <div className="card__buttons">
         <button className="card__button card__button_pet">{type}</button>
-        <button className="card__button card__button_age">{age}</button>
+        <button className="card__button card__button_age">{age} year</button>
+
       </div>
       <div className="card__location">
         <img src={pin} alt="" className="card__pin" />
