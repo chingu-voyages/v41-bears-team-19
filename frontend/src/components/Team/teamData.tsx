@@ -33,4 +33,3 @@ const teamData: TeamMember[] = [
 ]
 
 export default teamData
-// export default teamData
