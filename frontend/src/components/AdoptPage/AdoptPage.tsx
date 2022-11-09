@@ -5,7 +5,7 @@ import { Pet } from '../PetCard/PetCard';
 import Categories from '../Categories/Categories';
 
 const AdoptPage = () => {
-  const results = pets.map((pet: Pet) => <PetCard pet={pet} key={pet.id}/>);
+  const results = pets.map((pet: Pet) => <PetCard pet={pet} key={pet.id as number}/>);
 
   return (
     <section className="adopt">

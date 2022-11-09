@@ -3,17 +3,17 @@ import pin from '../../images/location.png';
 
 import React from 'react';
 
-export interface Pet {
-  id: number;
-  name: string;
-  age: number;
-  type: string;
-  photo: string;
-  location: string;
+export type Pet = {
+  id: number,
+  name: string,
+  age: number,
+  type: string,
+  photo: string,
+  location: string,
 }
 
 
-const PetCard = ({ name, age, type, photo, location }: Pet) => {
+const PetCard = ({ name, age, type, photo, location }: any) => {
 
   return (
     <article className="card">
