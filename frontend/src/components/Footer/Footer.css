@@ -1,0 +1,30 @@
+footer {
+    background-color: var(--pink);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 50px 75px;
+    max-width: 1280px;
+    color: var(--white);
+    gap: 20px;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.footer__team {
+    font-size: 14px;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
