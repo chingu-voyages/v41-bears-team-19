@@ -1,0 +1,33 @@
+.categories {
+  max-width: 1232px;
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
+  gap: 12px;
+}
+
+.categories__button {
+  max-width: 206px;
+  width: 100%;
+  background-color: var(--light-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button__icon {
+  max-width: 44px;
+}
+
+.button__name {
+  color: var(--black);
+  font-family: var(--form-text);
+  text-transform: uppercase;
+  padding-left: 8px;
+}
+
+@media screen and (max-width: 1010px) {
+  .categories__button {
+    margin: 5px;
+  }
+}
