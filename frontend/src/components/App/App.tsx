@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useEffect, useState} from 'react';
-=======
-import React from 'react';
->>>>>>> development
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -11,10 +7,8 @@ import Footer from '../Footer/Footer';
 import './App.css';
 import Search from '../Search/Search';
 import Register from '../Register/Register';
-<<<<<<< HEAD
-=======
+import UserProfile from '../UserProfile/UserProfile';
 import AdoptPage from '../AdoptPage/AdoptPage';
->>>>>>> development
 
 function App() {
   return (
@@ -24,11 +18,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
-<<<<<<< HEAD
-=======
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/adopt" element={<AdoptPage />} />
-
->>>>>>> development
+        <Route path="/adopt" element={<AdoptPage />} />
         <Route path="/" element={<Main />} />
       </Routes>
       <Footer />

@@ -22,7 +22,7 @@ const teamData: TeamMember[] = [
         name: "Muaad Ahmed",
         role: "Back End Developer",
         linkedin: "https://www.linkedin.com/in/muaad-ahmed-a84a58157/",
-        img: "https://media-exp1.licdn.com/dms/image/D4E35AQHbeVPPLaC73g/profile-framedphoto-shrink_800_800/0/1644425053079?e=1667487600&v=beta&t=H-aF-Y7k6ZPuG-MON7bgwHWDILUb2ZEqUjgqDrnqA2c"
+        img: "https://media-exp1.licdn.com/dms/image/D4E35AQHbeVPPLaC73g/profile-framedphoto-shrink_800_800/0/1644425053079?e=1668574800&v=beta&t=j-oWoIR5H_Mko-BlUdZQHBIEB71DG2R6bA8QiXfqiHw"
     },
     {
         name: "Federico Chaves",
