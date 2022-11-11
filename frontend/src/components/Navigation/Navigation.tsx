@@ -10,6 +10,7 @@ const Navigation = () => {
 /*     { title: 'Donate', url: 'donate' },
     { title: 'Sponsor', url: 'sponsor' }, */
     { title: 'Profile', url: 'profile' },
+    { title: 'Pet', url: 'pet' },
     { title: 'Login', url: 'login' },
   ];
 

@@ -4,7 +4,8 @@ interface Pets {
     age: number,
     photo: string,
     type: string,
-    location: string
+    location: string,
+    shelter: string
 }
 
 const PetData: Pets[] = [
@@ -14,7 +15,8 @@ const PetData: Pets[] = [
         age: 1,
         photo: './pet1.jpg',
         type: 'Cat',
-        location: 'Boulder'
+        location: 'Boulder',
+        shelter: 'Love Pets'
     },
     {
         id: 2,
@@ -22,7 +24,8 @@ const PetData: Pets[] = [
         age: 1,
         photo: './pet1.jpg',
         type: 'Cat',
-        location: 'Boulder'
+        location: 'Boulder',
+        shelter: 'Love Pets'
     },
     {
         id: 3,
@@ -30,7 +33,8 @@ const PetData: Pets[] = [
         age: 1,
         photo: './pet1.jpg',
         type: 'Cat',
-        location: 'Boulder'
+        location: 'Boulder',
+        shelter: 'Love Pets'
     }
 
 ]

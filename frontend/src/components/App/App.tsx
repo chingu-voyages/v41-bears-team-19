@@ -9,6 +9,7 @@ import Search from '../Search/Search';
 import Register from '../Register/Register';
 import UserProfile from '../UserProfile/UserProfile';
 import AdoptPage from '../AdoptPage/AdoptPage';
+import Pet from '../Pet/Pet';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile />} />
+        <Route path="/pet" element={<Pet />} />
         <Route path="/adopt" element={<AdoptPage />} />
         <Route path="/" element={<Main />} />
       </Routes>
