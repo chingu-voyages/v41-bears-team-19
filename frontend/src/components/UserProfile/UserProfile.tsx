@@ -20,11 +20,6 @@ const UserProfile = () => {
     })
 
     const sheltersDonated = ShelterData.map((shelter) => {
-        /* return <div key={shelter.id} className='user__pet-card'>
-            <img src={shelter.photo} alt={shelter.name} className='user__pet-img' />
-            <h3>{shelter.name}</h3>
-            <span className='user__shelter-location'>{shelter.location}</span>
-            </div> */
         return <ShelterCard key={shelter.id}
                 name={shelter.name}
                 photo={shelter.photo}

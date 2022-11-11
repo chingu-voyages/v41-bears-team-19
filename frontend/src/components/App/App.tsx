@@ -18,9 +18,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/user" element={<UserProfile />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/adopt" element={<AdoptPage />} />
-
         <Route path="/" element={<Main />} />
       </Routes>
       <Footer />
