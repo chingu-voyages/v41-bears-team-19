@@ -7,6 +7,7 @@ import PetCard from '../PetCard/PetCard'
 
 const Pet = () => {    
 
+    //placeholder data
     const pet = PetData[0];
 
     const morePets = PetData.map((pet) => {

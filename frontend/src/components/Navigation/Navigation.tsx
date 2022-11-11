@@ -10,6 +10,7 @@ const Navigation = () => {
 /*     { title: 'Donate', url: 'donate' },
     { title: 'Sponsor', url: 'sponsor' }, */
     { title: 'Profile', url: 'profile' },
+    //these routes are placeholders to facilitate access. They'll be deleted later when we'll have a full stack app
     { title: 'Pet', url: 'pet' },
     { title: 'Login', url: 'login' },
   ];
