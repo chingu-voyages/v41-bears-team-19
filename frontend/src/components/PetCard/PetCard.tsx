@@ -13,7 +13,9 @@ export type Pet = {
 }
 
 
-const PetCard = ({ name, age, type, photo, location }: any) => {
+const PetCard = ({ pet }: any) => {
+
+  const {name, age, type, photo, location} = pet
 
   return (
     <article className="card">
