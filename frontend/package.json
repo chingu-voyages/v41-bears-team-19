@@ -1,10 +1,6 @@
 {
   "name": "pet-shelter",
   "version": "0.1.0",
-<<<<<<< HEAD
-  "proxy": "http://localhost:5000",
-=======
->>>>>>> development
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

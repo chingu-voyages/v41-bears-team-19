@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -19,7 +19,6 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile />} />
-        <Route path="/adopt" element={<AdoptPage />} />
         <Route path="/adopt" element={<AdoptPage />} />
         <Route path="/" element={<Main />} />
       </Routes>
