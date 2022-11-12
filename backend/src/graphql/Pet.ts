@@ -52,11 +52,7 @@ export const PetQuery = extendType({
       resolve(parent, args, context) {
         const where = args
           ? {
-<<<<<<< HEAD
               AND: [
-=======
-              OR: [
->>>>>>> c0763da (set up filters for pets)
                 { location: { contains: args.location as string } },
                 { type: { equals: args.type as string } },
               ],
