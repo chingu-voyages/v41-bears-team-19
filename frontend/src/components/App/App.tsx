@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
