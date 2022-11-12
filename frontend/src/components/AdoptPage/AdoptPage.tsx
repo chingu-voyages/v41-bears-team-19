@@ -1,13 +1,13 @@
 import PetCard from '../PetCard/PetCard';
 import './AdoptPage.css';
-import { FEED_QUERY } from './testData';
 import { Pet } from '../PetCard/PetCard';
 import Categories from '../Categories/Categories';
 import { useQuery } from '@apollo/client';
+import { ALL_PETS } from '../../utils/requests';
 
 const AdoptPage = () => {
 
-  const { data }  = useQuery(FEED_QUERY)
+  const { data }  = useQuery(ALL_PETS)
 
   const results = data && data.allPets.map((pet: Pet) => <PetCard pet={pet} key={pet.id}/>);
 
