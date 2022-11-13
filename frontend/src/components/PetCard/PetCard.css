@@ -1,0 +1,58 @@
+.card {
+  border-radius: 20px;
+  max-width: 234px;
+  width: 100%;
+  min-height: 350px;
+  padding: 0px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.card__image {
+  max-width: 234px;
+  max-height: 228px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.card__button {
+  margin: 0 auto;
+  max-width: 70px;
+  width: 100%;
+  min-height: 35px;
+  background-color: var(--blue);
+  padding: 0px;
+  color: var(--black);
+  font-size: 16px;
+}
+
+.card__button_age {
+  background-color: var(--light-blue);
+}
+
+.card__location {
+  display: flex;
+  align-items: center;
+}
+
+.card__pin{
+  max-height: 17px;
+
+}
+
+.card__text{
+  font-family: var(--main-text);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--grey);
+  margin-left: 6px;
+}
