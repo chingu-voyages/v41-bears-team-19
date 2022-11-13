@@ -1,0 +1,21 @@
+{
+  "name": "pet-adopt-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
+    "generate": "ts-node --transpile-only src/schema.ts",
+    "start-frontend": "cd frontend && npm start",
+    "start-backend": "cd backend && npm run dev",
+    "dev-start": "concurrently \"npm run start-frontend\" \"npm run start-backend\""
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}

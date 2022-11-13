@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import {
   booleanArg,
   enumType,
@@ -7,6 +8,7 @@ import {
   objectType,
   stringArg,
 } from 'nexus';
+
 
 const GenderEnum = enumType({
   name: 'GenderEnum',
@@ -50,11 +52,17 @@ export const PetQuery = extendType({
       },
       // @ts-ignore
       resolve(parent, args, context) {
-        const where = args
+         
+        const where: any = args
           ? {
               AND: [
-                { location: { contains: args.location as string } },
-                { type: { equals: args.type as string } },
+                {
+                  location: {
+                    contains: args.location as string,
+                    mode: 'insensitive',
+                  },
+                },
+                { type: { equals: args.type as string, mode: 'insensitive' } },
               ],
             }
           : {};
