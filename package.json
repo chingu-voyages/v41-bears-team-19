@@ -8,7 +8,7 @@
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "generate": "ts-node --transpile-only src/schema.ts",
     "start-frontend": "cd frontend && npm start",
-    "start-backend": "cd backend && npm run dev",
+    "start-backend": "cd backend && npm run start",
     "dev-start": "concurrently \"npm run start-frontend\" \"npm run start-backend\""
 
   },
