@@ -34,7 +34,7 @@ const Search = () => {
   const navigation = useNavigate();
 
   const submitSearchData = ({query}: SearchQuery) => {
-    const petsByLocation = petQueryWithFilters(query)
+    const petsByLocation = petQueryWithFilters({location: query, type: ''})
     navigation('/adopt', { state : petsByLocation  });
   };
   return (

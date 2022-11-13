@@ -14,9 +14,9 @@ export const ALL_PETS = gql`
   }
 `;
 
-export const petQueryWithFilters = (location: string | null) => {
+export const petQueryWithFilters = ({location, type} :{location: string | null, type: string | null}) => {
   const query = `{
-    allPets ${location && `(location: "${location}")`}{
+    allPets ${(location || type ) ? `(location: "${location}")`:''}{
       id
       name
       age

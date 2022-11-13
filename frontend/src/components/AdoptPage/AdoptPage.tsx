@@ -10,9 +10,10 @@ import { useState } from 'react';
 const AdoptPage = () => {
   const { state } = useLocation();
   const [searchParameters, setSearchParameters] = useState(
-    state ?? petQueryWithFilters('')
+    state ?? petQueryWithFilters({location: '', type: ''})
   );
-  const [searchInput, setSearchInput] = useState('');
+  const [petLocation, setpetLocation] = useState('');
+  const [petType, setPetType] = useState('')
   const { data } = useQuery(
     gql`
       ${searchParameters}
@@ -21,8 +22,12 @@ const AdoptPage = () => {
 
   const handleLocationSubmit = (event: any) => {
     event.preventDefault();
-    setSearchParameters(() => petQueryWithFilters(searchInput));
+    setSearchParameters(() => petQueryWithFilters({location: petLocation, type: petType}));
   };
+
+  const handlePetSelection = (selection: string) => {
+    setPetType(selection)
+  }
 
   return (
     <section className="adopt">
@@ -35,10 +40,10 @@ const AdoptPage = () => {
           type="text"
           className="form__input adopt__input"
           placeholder="Search your area"
-          onChange={(event) => setSearchInput(event.target.value as string)}
+          onChange={(event) => setpetLocation(event.target.value as string)}
         />
       </form>
-      <Categories />
+      <Categories onSelection={handlePetSelection}/>
       <section className="results">
         {data &&
           data.allPets.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)}
