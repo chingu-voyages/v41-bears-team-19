@@ -7,7 +7,7 @@ import spiderIcon from '../../images/spider-icon.png';
 
 import React from 'react';
 
-const Categories = () => {
+const Categories = ({ onSelection }: {onSelection: (name: string)=> void}) => {
   const categoryButtons = [
     { name: 'cats', image: catIcon },
     { name: 'dogs', image: dogIcon },
@@ -19,7 +19,12 @@ const Categories = () => {
   return (
     <div className="categories">
       {categoryButtons.map(({ name, image }, index) => (
-        <button className="categories__button" key={index}>
+        <button
+          className="categories__button"
+          value={name}
+          key={index}
+          onClick={() => onSelection(name)}
+        >
           <img src={image} alt="" className="button__icon" />{' '}
           <p className="button__name">{name}</p>
         </button>

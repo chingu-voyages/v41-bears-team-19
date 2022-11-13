@@ -10,5 +10,17 @@
 .results {
   display: grid;
   justify-content: space-between;
+  justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+}
+
+.adopt__search{
+  text-align: center;
+}
+
+.adopt__input {
+  margin-left: 12px;
+  max-width: 240px;
+  width: 100%;
+  text-align: center;
 }

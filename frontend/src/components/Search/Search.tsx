@@ -3,8 +3,9 @@ import searchDecoration from '../../images/spiral-down-pink.png';
 import searchPet from '../../images/search-pet.png';
 import { useEffect } from 'react';
 import FormPage from '../FormPage/FormPage';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { petQueryWithFilters } from '../../utils/requests';
 
 interface SearchQuery {
   query: string;
@@ -30,8 +31,11 @@ const Search = () => {
     }
   }, [formState, reset]);
 
-  const submitSearchData = (data: SearchQuery) => {
-    console.log(data);
+  const navigation = useNavigate();
+
+  const submitSearchData = ({query}: SearchQuery) => {
+    const petsByLocation = petQueryWithFilters({location: query, type: ''})
+    navigation('/adopt', { state : petsByLocation  });
   };
   return (
     <FormPage
