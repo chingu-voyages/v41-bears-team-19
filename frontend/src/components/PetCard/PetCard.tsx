@@ -27,7 +27,7 @@ const PetCard = ({ pet }: { pet: Pet }) => {
 
       <div className="card__buttons">
         <button className="card__button card__button_pet">{type}</button>
-        <button className="card__button card__button_age">{age} year</button>
+        <button className="card__button card__button_age">{age >1 ? `${age} years`: `${age} year`}</button>
       </div>
     </article>
   );

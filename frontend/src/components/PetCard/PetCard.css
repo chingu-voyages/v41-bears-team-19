@@ -39,6 +39,10 @@
   background-color: var(--light-blue);
 }
 
+.card__button_pet{
+  text-transform: capitalize;
+}
+
 .card__location {
   display: flex;
   align-items: center;
