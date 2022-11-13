@@ -24,3 +24,9 @@
   width: 100%;
   text-align: center;
 }
+
+@media screen and (max-width: 1024px){
+  .adopt{
+    padding: 0px 12px 50px;
+  }
+}
