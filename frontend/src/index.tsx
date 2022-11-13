@@ -11,7 +11,7 @@ import {
 } from '@apollo/client';
 
 const httplink = createHttpLink({
-  uri: 'http://localhost:5500',
+  uri: process.env.REACT_APP_BACKEND_URI || 'http://localhost:5500',
 });
 
 const client = new ApolloClient({
