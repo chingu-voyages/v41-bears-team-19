@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "generate": "ts-node --transpile-only src/schema.ts",
-    "start-frontend": "cd frontend && npm start",
-    "start-backend": "cd backend && npm run start",
-    "dev-start": "concurrently \"npm run start-frontend\" \"npm run start-backend\""
+    "start-frontend": "cd frontend && && npm install && npm run start",
+    "start-backend": "cd backend && npm install && npm run start",
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\""
 
   },
   "keywords": [],
