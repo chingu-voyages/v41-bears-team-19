@@ -6,14 +6,15 @@ import { gql, useQuery } from '@apollo/client';
 import { petQueryWithFilters } from '../../utils/requests';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { ColorRing } from 'react-loader-spinner';
 
 const AdoptPage = () => {
   const { state } = useLocation();
   const [searchParameters, setSearchParameters] = useState(
-    state ?? petQueryWithFilters({location: '', type: ''})
+    state ?? petQueryWithFilters({ location: '', type: '' })
   );
   const [petLocation, setpetLocation] = useState('');
-  const [petType, setPetType] = useState('')
+  const [petType, setPetType] = useState('');
   const { data } = useQuery(
     gql`
       ${searchParameters}
@@ -22,12 +23,13 @@ const AdoptPage = () => {
 
   const handleLocationSubmit = (event: any) => {
     event.preventDefault();
-    setSearchParameters(() => petQueryWithFilters({location: petLocation, type: petType}));
+    setSearchParameters(() =>
+      petQueryWithFilters({ location: petLocation, type: petType })
+    );
   };
-
   const handlePetSelection = (selection: string) => {
-    setPetType(selection)
-  }
+    setPetType(selection);
+  };
 
   return (
     <section className="adopt">
@@ -43,10 +45,14 @@ const AdoptPage = () => {
           onChange={(event) => setpetLocation(event.target.value as string)}
         />
       </form>
-      <Categories onSelection={handlePetSelection}/>
+      <Categories onSelection={handlePetSelection} />
+
       <section className="results">
-        {data &&
-          data.allPets.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)}
+        {data ? (
+          data.allPets.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)
+        ) : (
+          <ColorRing />
+        )}
       </section>
     </section>
   );

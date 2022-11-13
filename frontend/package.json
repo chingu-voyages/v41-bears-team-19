@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.38.0",
     "react-icons": "^4.6.0",
+    "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.4.2",
     "react-script": "^2.0.5",
     "react-scripts": "5.0.1",
