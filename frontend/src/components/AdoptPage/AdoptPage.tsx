@@ -3,14 +3,16 @@ import './AdoptPage.css';
 import { Pet } from '../PetCard/PetCard';
 import Categories from '../Categories/Categories';
 import { gql, useQuery } from '@apollo/client';
-import { ALL_PETS, petQueryWithFilters } from '../../utils/requests';
+import { petQueryWithFilters } from '../../utils/requests';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 const AdoptPage = () => {
-    const { state } = useLocation();
-  const [searchParameters, setSearchParameters ] = useState(state)
-  const [searchInput, setSearchInput] = useState('')
+  const { state } = useLocation();
+  const [searchParameters, setSearchParameters] = useState(
+    state ?? petQueryWithFilters('')
+  );
+  const [searchInput, setSearchInput] = useState('');
   const { data } = useQuery(
     gql`
       ${searchParameters}
@@ -19,8 +21,8 @@ const AdoptPage = () => {
 
   const handleLocationSubmit = (event: any) => {
     event.preventDefault();
-    setSearchParameters(() => petQueryWithFilters(searchInput))
-  }
+    setSearchParameters(() => petQueryWithFilters(searchInput));
+  };
 
   return (
     <section className="adopt">
@@ -33,7 +35,7 @@ const AdoptPage = () => {
           type="text"
           className="form__input adopt__input"
           placeholder="Search your area"
-          onChange={(event)=> setSearchInput(event.target.value as string)}
+          onChange={(event) => setSearchInput(event.target.value as string)}
         />
       </form>
       <Categories />
