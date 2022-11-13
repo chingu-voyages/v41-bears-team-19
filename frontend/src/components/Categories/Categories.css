@@ -5,6 +5,7 @@
   grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
   gap: 12px;
   padding: 12px;
+  justify-items: center;
 }
 
 .categories__button {
