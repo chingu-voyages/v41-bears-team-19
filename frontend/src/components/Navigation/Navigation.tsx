@@ -7,6 +7,7 @@ const Navigation = () => {
 
   const navigationLinks = [
     { title: 'Find Pets', url: 'search' },
+    { title: 'Adopt', url: 'adopt' },
     { title: 'Donate', url: 'donate' },
     { title: 'Sponsor', url: 'sponsor' },
     { title: 'Login', url: 'login' },
