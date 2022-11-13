@@ -4,18 +4,16 @@ import pin from '../../images/location.png';
 import React from 'react';
 
 export type Pet = {
-  id: number,
-  name: string,
-  age: number,
-  type: string,
-  photo: string,
-  location: string,
-}
+  id: number;
+  name: string;
+  age: number;
+  type: string;
+  photo: string;
+  location: string;
+};
 
-
-const PetCard = ({ pet }: any) => {
-
-  const {name, age, type, photo, location} = pet
+const PetCard = ({ pet }: { pet: Pet }) => {
+  const { name, age, type, photo, location } = pet;
 
   return (
     <article className="card">
@@ -30,7 +28,6 @@ const PetCard = ({ pet }: any) => {
       <div className="card__buttons">
         <button className="card__button card__button_pet">{type}</button>
         <button className="card__button card__button_age">{age} year</button>
-
       </div>
     </article>
   );
